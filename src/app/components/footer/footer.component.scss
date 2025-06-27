@@ -74,7 +74,7 @@ $large-desktop: 1400px;
       margin-bottom: 1.2rem;
       @include mobile { display: flex; justify-content: center; }
       .footer-logo {
-        max-width: 120px;
+        max-width: 200px;
         height: auto;
         object-fit: contain;
         filter: drop-shadow(0 2px 8px $shadow-color);
