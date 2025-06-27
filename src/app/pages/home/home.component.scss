@@ -312,3 +312,302 @@
     to { opacity: 1; transform: translateY(0) scale(1);}
   }
 }
+
+/* About Us Section */
+.about-us {
+  background: $background-primary;
+  padding: 4rem 0 3rem 0;
+  .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+  }
+  .about-image img {
+    width: 340px;
+    max-width: 90vw;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px $shadow-color;
+    background: $primary-lightest;
+    object-fit: cover;
+  }
+  .about-content {
+    max-width: 600px;
+    h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: $primary-dark;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.15rem;
+      color: $secondary-dark;
+      margin-bottom: 1.2rem;
+    }
+    ul {
+      list-style: disc inside;
+      color: $primary;
+      font-size: 1.05rem;
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+  background: $background-secondary;
+  padding: 4rem 0 3rem 0;
+  .choose-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 800;
+      color: $primary-dark;
+      margin-bottom: 2.5rem;
+    }
+    .choose-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: stretch;
+    }
+    .choose-feature {
+      background: $background-primary;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px $shadow-color;
+      border: 1px solid $border-light;
+      flex: 1 1 220px;
+      max-width: 270px;
+      min-width: 220px;
+      padding: 2rem 1.2rem 2.2rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+      &:hover {
+        box-shadow: 0 6px 32px $shadow-color-dark;
+        border-color: $primary;
+        transform: translateY(-6px) scale(1.03);
+      }
+      img {
+        width: 54px;
+        height: 54px;
+        object-fit: contain;
+        margin-bottom: 1.1rem;
+      }
+      h3 {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: $primary-dark;
+        margin-bottom: 0.7rem;
+      }
+      p {
+        font-size: 1rem;
+        color: $text-secondary;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/* Responsive styles for new sections */
+@media (max-width: 1024px) {
+  .about-us .about-container {
+    flex-direction: column;
+    gap: 2rem;
+    .about-image img { width: 90vw; }
+    .about-content { max-width: 98vw; }
+  }
+  .why-choose-us .choose-container .choose-features {
+    gap: 1.2rem;
+    .choose-feature { max-width: 320px; }
+  }
+}
+@media (max-width: 768px) {
+  .about-us, .why-choose-us {
+    padding: 2.2rem 0 1.5rem 0;
+  }
+  .about-us .about-container,
+  .why-choose-us .choose-container .choose-features {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.2rem;
+    .choose-feature { max-width: 90vw; }
+  }
+}
+
+/* Our Premium Products Section */
+.premium-products {
+  background: $background-tertiary;
+  padding: 4rem 0 3rem 0;
+
+  .premium-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: $primary-dark;
+    margin-bottom: 2.5rem;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+  }
+
+  .premium-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.1rem;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .premium-card {
+    background: $background-primary;
+    border-radius: 22px;
+    box-shadow: 0 4px 24px $shadow-color;
+    border: 1.5px solid $border-light;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: box-shadow 0.25s, transform 0.25s, border 0.2s;
+    padding: 0 0 2.2rem 0;
+    position: relative;
+    overflow: hidden;
+
+    &:hover, &:focus-within {
+      box-shadow: 0 8px 36px $shadow-color-dark;
+      border-color: $primary;
+      transform: translateY(-8px) scale(1.03);
+      .premium-link {
+        background: $primary-dark;
+        color: $text-white;
+      }
+    }
+
+    .premium-image-wrap {
+      width: 100%;
+      position: relative;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $primary-lightest;
+      border-radius: 0 0 18px 18px;
+      overflow: hidden;
+      min-height: 180px;
+      max-height: 200px;
+      margin-bottom: 1.2rem;
+
+      img {
+        width: 100%;
+        max-width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 0 0 18px 18px;
+        box-shadow: 0 2px 8px $shadow-color;
+        background: $primary-lightest;
+        display: block;
+      }
+
+      .premium-badge {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: $secondary;
+        color: $text-white;
+        font-size: 0.95rem;
+        font-weight: 700;
+        padding: 0.35em 1.1em;
+        border-radius: 16px;
+        box-shadow: 0 2px 8px $shadow-color;
+        letter-spacing: 0.5px;
+        z-index: 2;
+        text-transform: uppercase;
+      }
+    }
+
+    .premium-info {
+      padding: 0 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .premium-name {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: $primary-dark;
+      margin: 0.7rem 0 0.2rem 0;
+      letter-spacing: -0.5px;
+      text-transform: capitalize;
+    }
+
+    .premium-desc {
+      font-size: 1.02rem;
+      color: $text-secondary;
+      margin-bottom: 0.7rem;
+      min-height: 48px;
+    }
+
+    .premium-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.6rem 1.6rem;
+      background: $primary;
+      color: $text-white;
+      border-radius: 24px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px $shadow-color;
+      outline: none;
+      border: none;
+      cursor: pointer;
+
+      &:hover, &:focus {
+        background: $primary-dark;
+        color: $text-white;
+      }
+    }
+  }
+}
+
+/* Responsive styles for Premium Products */
+@media (max-width: 1200px) {
+  .premium-products .premium-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .premium-products {
+    padding: 2.2rem 0 1.5rem 0;
+    .premium-grid {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+    .premium-card {
+      max-width: 98vw;
+      margin: 0 auto;
+    }
+  }
+}

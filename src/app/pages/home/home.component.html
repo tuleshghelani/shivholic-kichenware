@@ -66,3 +66,72 @@
     <a routerLink="/services/customize-die" class="cta-btn">Customize Your Die</a>
   </div>
 </section>
+
+<!-- About Us Section -->
+<section class="about-us" aria-label="About Shivholic">
+  <div class="about-container">
+    <div class="about-image">
+      <img src="assets/logo/about-kitchenware.jpg" alt="About Shivholic Kitchenware" loading="lazy" />
+    </div>
+    <div class="about-content">
+      <h2>About Shivholic</h2>
+      <p>
+        At Shivholic, we blend tradition with innovation to deliver premium kitchenware solutions. Our commitment to quality, design, and customer satisfaction has made us a trusted name in the industry. Whether you're a home chef or a professional, our products are crafted to inspire and empower your culinary journey.
+      </p>
+      <ul>
+        <li>Premium materials & craftsmanship</li>
+        <li>Modern, ergonomic designs</li>
+        <li>Eco-friendly & sustainable practices</li>
+        <li>Dedicated customer support</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Our Premium Products Section -->
+<section class="premium-products" aria-label="Our Premium Products">
+  <div class="premium-container">
+    <h2 class="section-title">Our Premium Products</h2>
+    <div class="premium-grid">
+      <article class="premium-card" *ngFor="let product of premiumProducts; let i = index">
+        <div class="premium-image-wrap">
+          <img src="assets/logo/about-kitchenware.jpg" [alt]="product.name" loading="lazy" />
+        </div>
+        <div class="premium-info">
+          <h3 class="premium-name">{{ product.name }}</h3>
+          <p class="premium-desc">{{ product.description }}</p>
+          <a class="premium-link" href="#" tabindex="0" [attr.aria-label]="'View details for ' + product.name">View Details</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="why-choose-us" aria-label="Why Choose Shivholic">
+  <div class="choose-container">
+    <h2>Why Choose Us?</h2>
+    <div class="choose-features">
+      <div class="choose-feature">
+        <img src="assets/logo/quality-icon.svg" alt="Quality Assurance" loading="lazy" />
+        <h3>Unmatched Quality</h3>
+        <p>Every product undergoes rigorous quality checks to ensure durability and performance.</p>
+      </div>
+      <div class="choose-feature">
+        <img src="assets/logo/innovation-icon.svg" alt="Innovation" loading="lazy" />
+        <h3>Innovative Solutions</h3>
+        <p>We constantly innovate to bring you the latest in kitchenware technology and design.</p>
+      </div>
+      <div class="choose-feature">
+        <img src="assets/logo/support-icon.svg" alt="Support" loading="lazy" />
+        <h3>Trusted Support</h3>
+        <p>Our team is always ready to assist you, ensuring a seamless experience from purchase to use.</p>
+      </div>
+      <div class="choose-feature">
+        <img src="assets/logo/sustainability-icon.svg" alt="Sustainability" loading="lazy" />
+        <h3>Sustainability</h3>
+        <p>We are committed to eco-friendly practices, making your kitchen greener and cleaner.</p>
+      </div>
+    </div>
+  </div>
+</section>
