@@ -1,0 +1,177 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'styles/variables';
+@import 'styles/mixins';
+@import 'styles/effects';
+@import 'styles/typography';
+@import './styles/fix-layout.scss';
+// @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+$font-family-base: 'Roboto', sans-serif;
+// Primary Colors - Vibrant lime green theme representing freshness, innovation, and premium quality
+$primary: #B0CB1F;        // Main brand lime green
+$primary-light: #C4D94A;  // Lighter lime green
+$primary-lighter: #D8E773; // Even lighter lime green
+$primary-lightest: #F0F8D1; // Lightest lime green (subtle background)
+$primary-dark: #8FA319;   // Darker lime green
+
+$secondary: #006332;        // Main brand forest green
+$secondary-light: #007A3E;  // Lighter forest green
+$secondary-lighter: #00914A; // Even lighter forest green
+$secondary-lightest: #E8F5E8; // Lightest forest green (subtle background)
+$secondary-dark: #004D26;   // Darker forest green
+
+// Neutral Colors - Professional grays with subtle green undertones
+$neutral-dark: #2C3E2F;      // Dark green-gray
+$neutral-medium: #6B7A6E;    // Medium green-gray
+$neutral-light: #B8C5BA;     // Light green-gray
+$neutral-lighter: #E2E8E3;   // Lighter green-gray
+$neutral-lightest: #F7F9F7;  // Lightest green-gray
+
+// Additional Professional Colors
+$accent: #1A4D2E;           // Deep forest green for text and accents
+$success: #27AE60;          // Success states (green)
+$warning: #F39C12;          // Warning states (orange)
+$error: #E74C3C;            // Error states (red)
+$info: #3498DB;             // Information states (blue)
+
+// Background Colors
+$background-primary: #ffffff;
+$background-secondary: #F8FAF8;    // Very light green tint
+$background-tertiary: #F0F5F0;     // Light green tint
+
+// Text Colors
+$text-primary: $accent;
+$text-secondary: $neutral-dark;
+$text-light: $neutral-medium;
+$text-white: #ffffff;
+
+// Border Colors
+$border-light: $neutral-lighter;
+$border-medium: $neutral-medium;
+$border-dark: $neutral-dark;
+
+// Shadow Colors
+$shadow-color: rgba(176, 203, 31, 0.1);        // Primary color shadow
+$shadow-color-dark: rgba(0, 99, 50, 0.2);      // Secondary color shadow
+
+// Export variables for use in components
+:export {
+  primary: $primary;
+  primaryLight: $primary-light;
+  primaryLighter: $primary-lighter;
+  primaryLightest: $primary-lightest;
+  secondary: $secondary;
+  secondaryLight: $secondary-light;
+  secondaryLighter: $secondary-lighter;
+  secondaryLightest: $secondary-lightest;
+  neutralDark: $neutral-dark;
+  neutralMedium: $neutral-medium;
+  neutralLight: $neutral-light;
+  neutralLighter: $neutral-lighter;
+  neutralLightest: $neutral-lightest;
+}
+
+// Global styles
+body {
+  color: $text-primary;
+  background: $background-primary;
+  font-family: $font-body;
+  font-weight: $weight-regular;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &.mobile-menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  color: $text-primary;
+  font-family: $font-primary;
+  font-weight: $weight-bold;
+  line-height: $line-height-tight;
+  letter-spacing: $letter-spacing-tight;
+  margin: 0 0 1rem;
+}
+
+h1 {
+  font-size: $font-size-4xl;
+  font-weight: $weight-extrabold;
+}
+
+h2 {
+  font-size: $font-size-3xl;
+}
+
+h3 {
+  font-size: $font-size-2xl;
+}
+
+h4 {
+  font-size: $font-size-xl;
+}
+
+h5 {
+  font-size: $font-size-lg;
+}
+
+h6 {
+  font-size: $font-size-base;
+}
+
+a {
+  color: $primary;
+  font-weight: $weight-medium;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: $primary-light;
+  }
+}
+
+// Utility classes
+.text-primary { color: $primary; }
+.text-secondary { color: $secondary; }
+.bg-primary { background-color: $primary; }
+.bg-secondary { background-color: $secondary; }
+.text-uppercase { text-transform: uppercase; }
+.text-bold { font-weight: $weight-bold; }
+.text-semibold { font-weight: $weight-semibold; }
+.text-medium { font-weight: $weight-medium; }
+.letter-spacing-wide { letter-spacing: $letter-spacing-wide; }
+
+// Product Typography Classes
+.product-title {
+  font-family: $font-secondary;
+  font-weight: $weight-bold;
+  font-size: $font-size-2xl;
+  letter-spacing: $letter-spacing-tight;
+  color: $primary-dark;
+  text-transform: uppercase;
+}
+
+.product-description {
+  font-family: $font-body;
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+  color: $text-secondary;
+}
+
+.section-title {
+  font-family: $font-primary;
+  font-weight: $weight-bold;
+  font-size: $font-size-3xl;
+  letter-spacing: $letter-spacing-tight;
+  text-transform: uppercase;
+  color: $primary-dark;
+  margin-bottom: 2rem;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

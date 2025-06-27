@@ -1,0 +1,56 @@
+<!-- Premium Professional Header -->
+<header class="site-header" [class.sticky]="isSticky" role="banner">
+  <div class="header-container">
+    <!-- Logo & Tagline -->
+    <div class="header-brand">
+      <a routerLink="/" class="brand-link" aria-label="Shivholic Home">
+        <img src="assets/logo/logo.png" alt="Shivholic Logo" class="brand-logo" />
+      </a>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="header-nav" aria-label="Main Navigation">
+      <ul class="nav-list">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+        <li><a routerLink="/products" routerLinkActive="active">Products</a></li>
+        <li><a routerLink="/process" routerLinkActive="active">Process</a></li>
+        <li><a routerLink="/gallery" routerLinkActive="active">Gallery</a></li>
+        <li><a routerLink="/about-us" routerLinkActive="active">About Us</a></li>
+        <li><a routerLink="/company" routerLinkActive="active">Group Of Company</a></li>
+        <li><a routerLink="/contact-us" routerLinkActive="active">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="menu-toggle" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen" aria-label="Open Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav" [class.active]="isMobileMenuOpen" role="navigation" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <a routerLink="/" class="brand-link" (click)="closeMobileMenu()">
+        <img src="assets/logo/logo.png" alt="Shivholic Logo" class="brand-logo" />
+        <!-- <span class="brand-title">Shivholic</span> -->
+      </a>
+      <button class="close-btn" (click)="closeMobileMenu()" aria-label="Close Menu">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileMenu()">Home</a></li>
+      <li><a routerLink="/products" routerLinkActive="active" (click)="closeMobileMenu()">Products</a></li>
+      <li><a routerLink="/process" routerLinkActive="active" (click)="closeMobileMenu()">Process</a></li>
+      <li><a routerLink="/gallery" routerLinkActive="active" (click)="closeMobileMenu()">Gallery</a></li>
+      <li><a routerLink="/company" routerLinkActive="active" (click)="closeMobileMenu()">Group Of Company</a></li>
+      <li><a routerLink="/about-us" routerLinkActive="active" (click)="closeMobileMenu()">About Us</a></li>
+      <li><a routerLink="/contact-us" routerLinkActive="active" (click)="closeMobileMenu()">Contact</a></li>
+    </ul>
+    <div class="mobile-social">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
+  <!-- Overlay -->
+  <div class="backdrop" [class.active]="isMobileMenuOpen" (click)="closeMobileMenu()"></div>
+</header>

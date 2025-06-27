@@ -1,0 +1,183 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+@import '../../../styles.scss';
+
+.hero-slider {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #f8f8f8;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+
+  .slider {
+    position: relative;
+    min-height: 340px;
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0; left: 0;
+      transition: opacity 0.6s;
+      border-radius: 0 0 24px 24px;
+      overflow: hidden;
+
+      &.active {
+        display: block;
+        position: relative;
+        opacity: 1;
+        z-index: 1;
+      }
+
+      img {
+        width: 100%;
+        height: 340px;
+        object-fit: cover;
+        border-radius: 0 0 24px 24px;
+        filter: brightness(0.85);
+      }
+
+      .slide-overlay {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: linear-gradient(90deg, rgba(255,255,255,0.92) 60%, rgba(255,255,255,0.2) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 5vw;
+
+        .slide-content {
+          max-width: 480px;
+          padding: 2rem 2.5rem;
+          border-radius: 16px;
+          box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+          background: rgba(255,255,255,0.95);
+
+          h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+          }
+          p {
+            font-size: 1.15rem;
+            color: #555;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff;
+      border: none;
+      font-size: 2.2rem;
+      color: #e67e22;
+      cursor: pointer;
+      z-index: 2;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      transition: background 0.2s, color 0.2s;
+
+      &:hover { background: #e67e22; color: #fff; }
+      &.prev { left: 1.5rem; }
+      &.next { right: 1.5rem; }
+    }
+  }
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2.5rem;
+  margin: 3rem auto 2rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+
+  .feature-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    flex: 1 1 0;
+    min-width: 260px;
+    max-width: 370px;
+    padding: 2.2rem 1.5rem 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+
+    &:hover {
+      box-shadow: 0 6px 32px rgba(230,126,34,0.13);
+      transform: translateY(-6px) scale(1.03);
+    }
+
+    .icon {
+      margin-bottom: 1.2rem;
+      img {
+        width: 54px;
+        height: 54px;
+        object-fit: contain;
+      }
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 0.7rem;
+    }
+    p {
+      font-size: 1.05rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      min-height: 60px;
+    }
+    .cta-btn {
+      display: inline-block;
+      padding: 0.7rem 2rem;
+      background: #e67e22;
+      color: #fff;
+      border-radius: 24px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.2s;
+      &:hover { background: #cf711f; }
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 1024px) {
+  .features {
+    gap: 1.2rem;
+    .feature-card { max-width: 320px; }
+  }
+  .hero-slider .slider .slide img,
+  .hero-slider .slider .slide { height: 220px; }
+}
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+    .feature-card { max-width: 100%; }
+  }
+  .hero-slider .slider .slide img,
+  .hero-slider .slider .slide { height: 160px; }
+  .hero-slider .slider .slide-overlay .slide-content {
+    padding: 1.2rem 1rem;
+    h1 { font-size: 1.1rem; }
+    p { font-size: 0.95rem; }
+  }
+}
