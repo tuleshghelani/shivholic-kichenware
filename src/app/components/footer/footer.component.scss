@@ -24,9 +24,9 @@ $large-desktop: 1400px;
 
 // Premium Footer Styles
 .premium-footer {
-  background: linear-gradient(135deg, $primary-lightest 0%, $secondary-lightest 100%);
-  color: $text-secondary;
-  font-family: $font-family-base;
+  // background: linear-gradient(135deg, #f8fafc 0%, #eaf6ff 100%);
+  color: #2c3e50;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
   padding: 4rem 0 0;
   width: 100%;
   overflow: hidden;
@@ -52,17 +52,84 @@ $large-desktop: 1400px;
   }
 
   .footer-top {
+    padding: 48px 0 24px 0;
     .container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2.5rem;
-      @media (max-width: 1024px) {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+    .footer-section {
+      flex: 1 1 220px;
+      min-width: 220px;
+      margin-bottom: 24px;
+      .footer-logo {
+        width: 60px;
+        margin-bottom: 12px;
       }
-      @media (max-width: 576px) {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+      .company-description {
+        font-size: 1rem;
+        color: #7f8c8d;
+        margin-bottom: 18px;
+      }
+      .footer-social {
+        display: flex;
+        gap: 16px;
+        a {
+          color: #2c3e50;
+          font-size: 1.2em;
+          transition: color 0.2s;
+          &:hover {
+            color: #3498db;
+          }
+        }
+      }
+      .footer-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: #34495e;
+      }
+      .footer-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          margin-bottom: 8px;
+          a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.2s;
+            &:hover {
+              color: #b0cb1f;
+            }
+          }
+        }
+      }
+      .contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 10px;
+          color: #2c3e50;
+          font-size: 1rem;
+          i {
+            color: #b0cb1f;
+            font-size: 1.1em;
+          }
+          a {
+            color: #2c3e50;
+            text-decoration: none;
+            &:hover {
+              color: #3498db;
+            }
+          }
+        }
       }
     }
   }
@@ -204,28 +271,22 @@ $large-desktop: 1400px;
 
   // Footer Bottom
   .footer-bottom {
-    background: $background-primary;
-    padding: 1.2rem 0;
-    border-top: 1px solid $border-light;
-    margin-top: 2.5rem;
+    background: $primary-lighter;
+    padding: 16px 0;
     .container {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      @include mobile { flex-direction: column; text-align: center; gap: 0.7rem; }
+      gap: 6px;
     }
     .copyright {
-      color: $text-secondary;
-      font-size: 0.97rem;
-      margin: 0;
-      letter-spacing: 0.01em;
+      font-size: 0.95rem;
+      color: #7f8c8d;
     }
     .credits {
-      color: $primary-dark;
-      font-size: 0.97rem;
-      font-weight: 500;
-      margin: 0;
-      letter-spacing: 0.01em;
+      font-size: 1rem;
+      color: #b0cb1f;
+      font-weight: 600;
     }
   }
 }
@@ -246,15 +307,13 @@ $large-desktop: 1400px;
 }
 
 // Mobile-specific styles
-@media (max-width: 600px) {
-  .premium-footer {
-    padding-top: 1.5rem;
-    .footer-top .container { padding: 0 0.5rem; }
-    .social-links { margin-top: 1.5rem; }
-    .footer-bottom {
-      padding: 1rem 0;
-      .copyright, .credits { font-size: 0.89rem; }
-    }
+@media (max-width: 900px) {
+  .premium-footer .footer-top .container {
+    flex-direction: column;
+    gap: 0;
+  }
+  .premium-footer .footer-section {
+    margin-bottom: 32px;
   }
 }
 
