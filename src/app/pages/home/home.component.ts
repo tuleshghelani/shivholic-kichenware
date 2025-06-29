@@ -90,18 +90,22 @@ export class HomeComponent implements OnInit {
     {
       name: 'Product 1',
       description: 'Experience the best in class with Product 1, crafted for durability and elegance.',
+      isNew: true,
     },
     {
       name: 'Product 2',
       description: 'Product 2 combines modern design with unmatched performance for your kitchen.',
+      isNew: false,
     },
     {
       name: 'Product 3',
       description: 'Elevate your cooking with Product 3, a perfect blend of style and functionality.',
+      isNew: true,
     },
     {
       name: 'Product 4',
       description: 'Discover the premium quality of Product 4, designed for professional results.',
+      isNew: false,
     },
   ];
 

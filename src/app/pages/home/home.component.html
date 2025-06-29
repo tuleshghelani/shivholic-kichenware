@@ -3,113 +3,206 @@
   <div class="slider">
     <div class="slide active">
       <img src="assets/logo/slider-1.jpg" alt="Customize Die, Molding, Premium Kitchenware" loading="lazy" />
-      <div class="slide-overlay slide-overlay--left">
-        <div class="slide-content slide-animate--fadeInLeft">
-          <h1>Customize Die, Molding & More</h1>
-          <p>Premium solutions for your kitchenware business.</p>
+      <div class="slide-overlay glass">
+        <div class="slide-content">
+          <span class="slide-badge">Premium Quality</span>
+          <h1>Customize Die, Molding &amp; More</h1>
+          <p>Premium solutions for your kitchenware business with unmatched precision and innovation.</p>
+          <div class="slide-actions">
+            <a href="/services/customize-die" class="btn-primary">Get Started</a>
+            <a href="/about" class="btn-secondary">Learn More</a>
+          </div>
         </div>
       </div>
     </div>
     <div class="slide">
       <img src="assets/logo/slider-2.jpg" alt="Modern Kitchenware" loading="lazy" />
-      <div class="slide-overlay slide-overlay--center">
-        <div class="slide-content slide-animate--fadeInUp">
+      <div class="slide-overlay glass">
+        <div class="slide-content">
+          <span class="slide-badge">Innovation</span>
           <h1>Modern Kitchenware</h1>
-          <p>Innovative designs for every kitchen.</p>
+          <p>Innovative designs for every kitchen, crafted with precision and style.</p>
+          <div class="slide-actions">
+            <a href="/products/kitchenware" class="btn-primary">Explore Products</a>
+            <a href="/contact" class="btn-secondary">Contact Us</a>
+          </div>
         </div>
       </div>
     </div>
     <div class="slide">
       <img src="assets/logo/slider-3.jpg" alt="Professional Molding" loading="lazy" />
-      <div class="slide-overlay slide-overlay--right">
-        <div class="slide-content slide-animate--fadeInRight">
+      <div class="slide-overlay glass">
+        <div class="slide-content">
+          <span class="slide-badge">Excellence</span>
           <h1>Professional Molding</h1>
-          <p>Precision and quality in every product.</p>
+          <p>Precision and quality in every product, delivered with professional expertise.</p>
+          <div class="slide-actions">
+            <a href="/services/molding" class="btn-primary">View Services</a>
+            <a href="/portfolio" class="btn-secondary">Our Work</a>
+          </div>
         </div>
       </div>
     </div>
+    <!-- Slider Controls -->
     <button class="slider-btn prev" aria-label="Previous Slide">
-      <span class="slider-btn__icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-          <circle cx="11" cy="11" r="10" stroke="#A2C900" stroke-width="1.5" fill="rgba(255,255,255,0.8)"/>
-          <path d="M13.5 7L9.5 11L13.5 15" stroke="#A2C900" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="12" fill="#fff" opacity="0.8"/>
+        <path d="M15 18L9 12L15 6" stroke="#B0CB1F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </button>
     <button class="slider-btn next" aria-label="Next Slide">
-      <span class="slider-btn__icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-          <circle cx="11" cy="11" r="10" stroke="#A2C900" stroke-width="1.5" fill="rgba(255,255,255,0.8)"/>
-          <path d="M8.5 7L12.5 11L8.5 15" stroke="#A2C900" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="12" fill="#fff" opacity="0.8"/>
+        <path d="M9 18L15 12L9 6" stroke="#B0CB1F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </button>
+    <div class="slider-indicators">
+      <button class="indicator active" data-slide="0" aria-label="Go to slide 1"></button>
+      <button class="indicator" data-slide="1" aria-label="Go to slide 2"></button>
+      <button class="indicator" data-slide="2" aria-label="Go to slide 3"></button>
+    </div>
   </div>
 </section>
 
 <!-- Features Section -->
-<section class="features">
-  <div class="feature-card kitchenware">
-    <div class="icon">
-      <img src="assets/logo/kitchenware-icon.svg" alt="Kitchenware Icon" loading="lazy" />
+<section class="features" aria-label="Our Core Services">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Core Services</h2>
+      <p>Discover our premium range of solutions designed for excellence</p>
     </div>
-    <h2>Kitchenware</h2>
-    <p>
-      Discover our premium range of kitchenware, designed for durability, style, and functionality. Perfect for modern homes and professional kitchens.
-    </p>
-    <a routerLink="/products/kitchenware" class="cta-btn">Explore Kitchenware</a>
-  </div>
-  <div class="feature-card molding">
-    <div class="icon">
-      <img src="assets/logo/molding-icon.svg" alt="Molding Icon" loading="lazy" />
+    <div class="features-grid">
+      <div class="feature-card kitchenware">
+        <div class="feature-icon">
+          <div class="icon-wrapper">
+            <img src="assets/logo/kitchenware-icon.svg" alt="Kitchenware Icon" loading="lazy" />
+          </div>
+        </div>
+        <div class="feature-content">
+          <h3>Premium Kitchenware</h3>
+          <p>Discover our premium range of kitchenware, designed for durability, style, and functionality. Perfect for modern homes and professional kitchens.</p>
+          <ul class="feature-benefits">
+            <li>Professional grade materials</li>
+            <li>Ergonomic design</li>
+            <li>Lifetime warranty</li>
+          </ul>
+          <a routerLink="/products/kitchenware" class="feature-cta">
+            <span>Explore Kitchenware</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="feature-card molding">
+        <div class="feature-icon">
+          <div class="icon-wrapper">
+            <img src="assets/logo/molding-icon.svg" alt="Molding Icon" loading="lazy" />
+          </div>
+        </div>
+        <div class="feature-content">
+          <h3>Advanced Molding</h3>
+          <p>We offer advanced molding solutions for custom and large-scale kitchenware production, ensuring precision and quality in every piece.</p>
+          <ul class="feature-benefits">
+            <li>High-volume production</li>
+            <li>Quality control systems</li>
+            <li>Eco-friendly materials</li>
+          </ul>
+          <a routerLink="/services/molding" class="feature-cta">
+            <span>Learn About Molding</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="feature-card customize-die">
+        <div class="feature-icon">
+          <div class="icon-wrapper">
+            <img src="assets/logo/customize-die-icon.svg" alt="Customize Die Icon" loading="lazy" />
+          </div>
+        </div>
+        <div class="feature-content">
+          <h3>Custom Die Design</h3>
+          <p>Get tailor-made die solutions for your unique kitchenware needs. Our expertise ensures your ideas become reality with unmatched accuracy.</p>
+          <ul class="feature-benefits">
+            <li>3D modeling & prototyping</li>
+            <li>Material optimization</li>
+            <li>Quality assurance</li>
+          </ul>
+          <a routerLink="/services/customize-die" class="feature-cta">
+            <span>Customize Your Die</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
-    <h2>Molding</h2>
-    <p>
-      We offer advanced molding solutions for custom and large-scale kitchenware production, ensuring precision and quality in every piece.
-    </p>
-    <a routerLink="/services/molding" class="cta-btn">Learn About Molding</a>
-  </div>
-  <div class="feature-card customize-die">
-    <div class="icon">
-      <img src="assets/logo/customize-die-icon.svg" alt="Customize Die Icon" loading="lazy" />
-    </div>
-    <h2>Customize Die</h2>
-    <p>
-      Get tailor-made die solutions for your unique kitchenware needs. Our expertise ensures your ideas become reality with unmatched accuracy.
-    </p>
-    <a routerLink="/services/customize-die" class="cta-btn">Customize Your Die</a>
   </div>
 </section>
 
 <!-- About Us Section -->
 <section class="about-us" aria-label="About Shivholic">
-  <div class="about-container">
-    <div class="about-image">
-      <img src="assets/logo/about-kitchenware.jpg" alt="About Shivholic Kitchenware" loading="lazy" />
-    </div>
+  <div class="container">
     <div class="about-content">
-      <h2>About Shivholic</h2>
-      <p>
-        At Shivholic, we blend tradition with innovation to deliver premium kitchenware solutions. Our commitment to quality, design, and customer satisfaction has made us a trusted name in the industry. Whether you're a home chef or a professional, our products are crafted to inspire and empower your culinary journey.
-      </p>
-      <ul>
-        <li>Premium materials & craftsmanship</li>
-        <li>Modern, ergonomic designs</li>
-        <li>Eco-friendly & sustainable practices</li>
-        <li>Dedicated customer support</li>
-      </ul>
+      <div class="about-text">
+        <div class="section-badge">About Us</div>
+        <h2>Crafting Excellence Since 2019</h2>
+        <p class="about-lead">
+          At Shivholic, we blend tradition with innovation to deliver premium kitchenware solutions. Our commitment to quality, design, and customer satisfaction has made us a trusted name in the industry.
+        </p>
+        <p>
+          Whether you're a home chef or a professional, our products are crafted to inspire and empower your culinary journey. We believe in creating not just products, but experiences that enhance your cooking and dining moments.
+        </p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">1000+</span>
+            <span class="stat-label">Products Delivered</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">100+</span>
+            <span class="stat-label">Happy Clients</span>
+          </div>
+        </div>
+        <div class="about-actions">
+          <a href="/about" class="btn-primary">Learn More</a>
+          <a href="/contact" class="btn-outline">Get in Touch</a>
+        </div>
+      </div>
+      <div class="about-image">
+        <div class="image-wrapper">
+          <img src="assets/logo/about-kitchenware.jpg" alt="About Shivholic Kitchenware" loading="lazy" />
+          <div class="image-overlay">
+            <div class="overlay-content">
+              <h4>Premium Quality</h4>
+              <p>Every product meets our high standards</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Our Premium Products Section -->
 <section class="premium-products" aria-label="Our Premium Products">
-  <div class="premium-container">
-    <h2 class="section-title">Our Premium Products</h2>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Our Premium Products</h2>
+      <p>Explore our exclusive collection, designed for professionals and enthusiasts alike.</p>
+    </div>
     <div class="premium-grid">
       <article class="premium-card" *ngFor="let product of premiumProducts; let i = index">
         <div class="premium-image-wrap">
           <img src="assets/logo/about-kitchenware.jpg" [alt]="product.name" loading="lazy" />
+          <div class="premium-badge" *ngIf="product.isNew">New</div>
         </div>
         <div class="premium-info">
           <h3 class="premium-name">{{ product.name }}</h3>
@@ -123,8 +216,11 @@
 
 <!-- Why Choose Us Section -->
 <section class="why-choose-us" aria-label="Why Choose Shivholic">
-  <div class="choose-container">
-    <h2>Why Choose Us?</h2>
+  <div class="container">
+    <div class="section-header">
+      <h2>Why Choose Us?</h2>
+      <p>We deliver more than just products – we deliver trust, innovation, and excellence.</p>
+    </div>
     <div class="choose-features">
       <div class="choose-feature">
         <img src="assets/logo/quality-icon.svg" alt="Quality Assurance" loading="lazy" />
@@ -152,7 +248,7 @@
 
 <!-- Statistics Section -->
 <section class="statistics" aria-label="Our Achievements">
-  <div class="stats-container">
+  <div class="container">
     <div class="stats-grid">
       <div class="stat-item" data-aos="" data-aos-delay="100">
         <div class="stat-icon">
@@ -203,8 +299,11 @@
 
 <!-- Services Showcase Section -->
 <section class="services-showcase" aria-label="Our Services">
-  <div class="services-container">
-    <h2 class="section-title" data-aos="">Our Premium Services</h2>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Our Premium Services</h2>
+      <p>Tailored solutions for every kitchenware need, from design to delivery.</p>
+    </div>
     <div class="services-grid">
       <div class="service-card" data-aos="" data-aos-delay="100">
         <div class="service-icon">
@@ -265,8 +364,11 @@
 
 <!-- Testimonials Section -->
 <section class="testimonials" aria-label="Customer Testimonials">
-  <div class="testimonials-container">
-    <h2 class="section-title" data-aos="">What Our Clients Say</h2>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">What Our Clients Say</h2>
+      <p>Hear from our satisfied customers and partners.</p>
+    </div>
     <div class="testimonials-grid">
       <div class="testimonial-card" data-aos="" data-aos-delay="100">
         <div class="testimonial-content">
@@ -274,9 +376,6 @@
           <p>"Shivholic delivered exceptional quality kitchenware that exceeded our expectations. Their attention to detail is remarkable."</p>
         </div>
         <div class="testimonial-author">
-          <!-- <div class="author-avatar">
-            <img src="assets/logo/testimonial-1.jpg" alt="Sarah Johnson" loading="lazy" />
-          </div> -->
           <div class="author-info">
             <h4>Smit</h4>
             <span>Executive Chef</span>
@@ -290,9 +389,6 @@
           <p>"The custom die design service was outstanding. They understood our requirements perfectly and delivered on time."</p>
         </div>
         <div class="testimonial-author">
-          <!-- <div class="author-avatar">
-            <img src="assets/logo/testimonial-2.jpg" alt="Michael Chen" loading="lazy" />
-          </div> -->
           <div class="author-info">
             <h4>Mahesh</h4>
             <span>Production Manager</span>
@@ -306,9 +402,6 @@
           <p>"Professional service, premium quality, and excellent customer support. Shivholic is our trusted partner for all kitchenware needs."</p>
         </div>
         <div class="testimonial-author">
-          <!-- <div class="author-avatar">
-            <img src="assets/logo/testimonial-3.jpg" alt="Emma Rodriguez" loading="lazy" />
-          </div> -->
           <div class="author-info">
             <h4>Ajay</h4>
             <span>Owner</span>
