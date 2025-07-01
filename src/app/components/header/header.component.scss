@@ -54,24 +54,6 @@ $light-border: #e0e0e0;
 $light-hover: #f5f5f5;
 $light-shadow: rgba(0, 0, 0, 0.1);
 
-// Mobile-first breakpoints
-$breakpoint-mobile: 576px;
-$breakpoint-tablet: 768px;
-$breakpoint-desktop: 992px;
-$breakpoint-large: 1200px;
-
-@mixin mobile {
-  @media (max-width: #{$breakpoint-mobile}) { @content; }
-}
-
-@mixin tablet {
-  @media (min-width: #{$breakpoint-mobile + 1}) and (max-width: #{$breakpoint-tablet}) { @content; }
-}
-
-@mixin desktop {
-  @media (min-width: #{$breakpoint-tablet + 1}) { @content; }
-}
-
 // Main Header Styles
 .site-header {
   position: fixed;
@@ -79,29 +61,14 @@ $breakpoint-large: 1200px;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.98);
-  transition: all 0.3s ease;
-
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
   &.sticky {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
-
-    .main-header {
-      padding: 0.5rem 0;
-      
-      @include mobile {
-        padding: 0.3rem 0;
-      }
-    }
-
-    .brand-logo {
-      transform: scale(0.9);
-      
-      @include mobile {
-        height: 40px;
-      }
-    }
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   }
 
   .header-container {
@@ -122,236 +89,164 @@ $breakpoint-large: 1200px;
     align-items: center;
 
     .brand-link {
-      display: block;
-      
-      .brand-logo {
-        height: 55px;
-        width: auto;
-        transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
 
-        @include mobile {
-          height: 45px;
-        }
+      .brand-logo {
+        height: 70px;
+        width: auto;
+        max-width: 220px;
+        @include smooth-transition;
+        filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
       }
     }
   }
 
   .header-nav {
-    margin-left: auto;
-
-    @media (max-width: #{$breakpoint-tablet}) {
-      display: none;
-    }
+    flex: 1;
+    display: flex;
+    justify-content: center;
 
     .nav-list {
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
+      list-style: none;
       margin: 0;
       padding: 0;
-      list-style: none;
 
-      @media (max-width: #{$breakpoint-desktop}) {
-        gap: 1rem;
-      }
-    }
-
-    .nav-item {
-      position: relative;
-    }
-
-    .nav-link {
-      color: $light-text-primary;
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 500;
-      padding: 0.5rem 0;
-      transition: all 0.3s ease;
-      position: relative;
-      white-space: nowrap;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: $primary;
-        transition: width 0.3s ease;
-      }
-
-      &:hover, &.active {
-        color: $primary;
-
-        &::after {
-          width: 100%;
-        }
-      }
-
-      &.contact-btn {
-        background: $primary;
-        color: white;
-        padding: 0.5rem 1.2rem;
+      li a {
+        color: $light-text-primary;
+        font-weight: 500;
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 0.5rem 0.75rem;
         border-radius: 4px;
-        transition: all 0.3s ease;
+        text-transform: uppercase;
+        @include smooth-transition;
 
-        &::after {
-          display: none;
-        }
-
-        &:hover {
-          background: darken($primary, 10%);
-          transform: translateY(-2px);
+        &:hover, &.active {
+          color: $primary;
+          background: $light-hover;
         }
       }
+    }
+
+    @include mobile {
+      display: none;
     }
   }
 
   .menu-toggle {
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
     background: none;
     border: none;
-    padding: 0.5rem;
     cursor: pointer;
-    margin-left: auto;
-
-    @media (max-width: #{$breakpoint-tablet}) {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
+    margin-left: 0.5rem;
+    z-index: 1100;
 
     span {
       display: block;
-      width: 22px;
-      height: 2px;
+      height: 3px;
+      width: 100%;
       background: $primary;
-      transition: all 0.3s ease;
+      margin: 4px 0;
       border-radius: 2px;
+      @include smooth-transition;
     }
 
-    &.active {
-      span {
-        &:nth-child(1) {
-          transform: translateY(7px) rotate(45deg);
-        }
-        &:nth-child(2) {
-          opacity: 0;
-        }
-        &:nth-child(3) {
-          transform: translateY(-7px) rotate(-45deg);
-        }
-      }
-    }
+    &.active span:nth-child(1) { transform: translateY(7px) rotate(45deg);}
+    &.active span:nth-child(2) { opacity: 0;}
+    &.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg);}
   }
 
   // Mobile Nav Drawer
   .mobile-nav {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 85%;
-    max-width: 350px;
+    right: -320px;
+    width: 320px;
+    max-width: 90vw;
     height: 100vh;
-    background: white;
-    transition: all 0.3s ease-in-out;
-    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-    z-index: 1001;
+    background: #fff;
+    box-shadow: -4px 0 16px rgba(0,0,0,0.10);
+    z-index: 1200;
+    display: flex;
+    flex-direction: column;
+    @include smooth-transition;
 
-    @include mobile {
-      width: 100%;
-      max-width: 100%;
-    }
-
-    &.active {
-      right: 0;
-    }
+    &.active { right: 0; }
 
     .mobile-nav-header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 1rem;
-      border-bottom: 1px solid $light-border;
+      justify-content: space-between;
+      padding: 1.2rem 1.5rem 0.5rem;
 
-      .brand-logo {
-        height: 40px;
-      }
-
-      .close-btn {
-        background: none;
-        border: none;
-        font-size: 1.8rem;
-        color: $light-text-primary;
-        cursor: pointer;
-        padding: 0.5rem;
-        width: 40px;
-        height: 40px;
+      .brand-link {
         display: flex;
         align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-
-        &:hover {
-          background: rgba($primary, 0.1);
-          color: $primary;
-        }
+        .brand-logo { height: 38px; margin-right: 0.5rem; }
+        .brand-title { font-size: 1.2rem; color: $primary; font-weight: 700; }
       }
-    }
-
-    .mobile-nav-content {
-      padding: 1rem;
+      .close-btn {
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: $primary;
+        cursor: pointer;
+      }
     }
 
     .mobile-nav-list {
       list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+      padding: 0 1.5rem;
+      margin: 1.5rem 0 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
 
-    .mobile-nav-item {
-      border-bottom: 1px solid $light-border;
-      
-      &:last-child {
-        border-bottom: none;
+      li a {
+        color: $light-text-primary;
+        font-size: 1.1rem;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid $light-border;
+        @include smooth-transition;
+
+        &:hover, &.active {
+          color: $primary;
+          border-bottom: 2px solid $primary;
+        }
       }
     }
 
-    .mobile-nav-link {
-      display: block;
-      padding: 1rem;
-      color: $light-text-primary;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      font-size: 1.1rem;
-
-      &:hover, &.active {
-        color: $primary;
-        background: rgba($primary, 0.05);
-        padding-left: 1.5rem;
+    .mobile-social {
+      display: flex;
+      gap: 1.2rem;
+      padding: 1.2rem 1.5rem 0.5rem;
+      a {
+        color: $light-text-primary;
+        font-size: 1.4rem;
+        &:hover { color: $primary; }
       }
     }
   }
 
   .backdrop {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.18);
+    z-index: 1100;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 1000;
-
-    &.active {
-      opacity: 1;
-      visibility: visible;
-    }
+    @include smooth-transition;
+    &.active { opacity: 1; visibility: visible; }
   }
 }
 
@@ -500,48 +395,30 @@ $breakpoint-large: 1200px;
 }
 
 // Responsive
-@media (max-width: #{$breakpoint-mobile}) {
-  .top-bar {
-    .top-bar-content {
-      flex-direction: column;
-      gap: 0.5rem;
-      text-align: center;
-
-      .contact-info {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-
-      .social-links {
-        margin-top: 0.5rem;
-      }
+@media (max-width: 900px) {
+  .top-bar .top-bar-content {
+    flex-direction: column;
+    gap: 8px;
+    .contact-info, .social-links {
+      justify-content: center;
     }
   }
 }
 
 .main-header {
-  padding: 1rem 0;
-  transition: all 0.3s ease;
-
-  @include mobile {
-    padding: 0.5rem 0;
-  }
-
+  background: transparent;
   .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
-
-    @include mobile {
-      padding: 0 1rem;
-    }
-  }
-
-  .header-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    padding: 0 16px;
+    min-height: 72px;
+  }
+  .header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
   }
 }
 
