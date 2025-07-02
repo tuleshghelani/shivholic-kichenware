@@ -245,6 +245,106 @@
   }
 }
 
+/* Mission & Vision Section */
+.mission-vision {
+  background: #fff;
+  padding: 4rem 0;
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .mv-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .mv-card {
+    background: #F8FAF8;
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px rgba(176,203,31,0.07);
+    flex: 1 1 320px;
+    max-width: 480px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    h2 {
+      color: #2C3E2F;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      strong { color: #B0CB1F; }
+    }
+    p {
+      color: #6B7A6E;
+      font-size: 1.15rem;
+      font-weight: 500;
+    }
+  }
+}
+
+/* Meet Our Team Section */
+.meet-team {
+  background: #F8FAF8;
+  padding: 4rem 0;
+  .section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    h2 {
+      font-size: 2rem;
+      strong { color: #B0CB1F; }
+    }
+    p {
+      color: #6B7A6E;
+      font-size: 1.1rem;
+    }
+  }
+  .team-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .team-card {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px rgba(44,62,47,0.07);
+    flex: 1 1 220px;
+    max-width: 260px;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    text-align: center;
+    transition: transform 0.22s cubic-bezier(0.4,0,0.2,1), box-shadow 0.22s cubic-bezier(0.4,0,0.2,1);
+    img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 3px solid #B0CB1F;
+      box-shadow: 0 2px 8px rgba(176,203,31,0.10);
+    }
+    h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.25rem;
+      color: #2C3E2F;
+      font-weight: 700;
+    }
+    .team-role {
+      color: #B0CB1F;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      color: #6B7A6E;
+      font-size: 0.98rem;
+    }
+    &:hover, &:focus-visible {
+      transform: translateY(-6px) scale(1.04);
+      box-shadow: 0 8px 32px rgba(176,203,31,0.18), 0 1.5px 8px rgba(44,62,47,0.10);
+      z-index: 2;
+    }
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 900px) {
   .about-hero .container {
@@ -271,6 +371,15 @@
     max-width: 100%;
     max-height: 320px;
     aspect-ratio: unset;
+  }
+  .mission-vision .mv-grid,
+  .meet-team .team-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .mission-vision .mv-card,
+  .meet-team .team-card {
+    max-width: 100%;
   }
 }
 @media (max-width: 600px) {
@@ -310,5 +419,13 @@
     max-width: 100%;
     max-height: 200px;
     aspect-ratio: unset;
+  }
+  .mission-vision,
+  .meet-team {
+    padding: 2rem 0;
+  }
+  .mission-vision .mv-card,
+  .meet-team .team-card {
+    padding: 1.5rem 0.8rem;
   }
 }
