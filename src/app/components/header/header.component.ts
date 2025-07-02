@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, inject, PLATFORM_ID, } from '@angular/core';
+import { Component, OnInit, HostListener, inject, PLATFORM_ID, AfterViewInit } from '@angular/core';
 import { Router, NavigationEnd, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule, isPlatformBrowser, DOCUMENT, ViewportScroller } from '@angular/common';
 import { filter } from 'rxjs/operators';
@@ -10,7 +10,7 @@ import { filter } from 'rxjs/operators';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterViewInit {
   private platformId = inject(PLATFORM_ID);
   private document = inject(DOCUMENT);
   private viewportScroller = inject(ViewportScroller);
@@ -75,6 +75,24 @@ export class HeaderComponent implements OnInit {
         !target.closest('.mobile-nav') && 
         !target.closest('.menu-toggle')) {
       this.closeMobileMenu();
+    }
+  }
+
+  ngAfterViewInit() {
+    if (!(window as any).googleTranslateElementInit) {
+      (window as any).googleTranslateElementInit = function() {
+        new (window as any).google.translate.TranslateElement(
+          {
+            pageLanguage: 'en',
+            layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false
+          },
+          'google_translate_element'
+        );
+      };
+      const script = document.createElement('script');
+      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      document.body.appendChild(script);
     }
   }
 }

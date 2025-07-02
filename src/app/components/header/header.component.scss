@@ -428,3 +428,55 @@ $light-shadow: rgba(0, 0, 0, 0.1);
     display: none !important;
   }
 }
+
+.google-translate {
+  display: inline-block;
+  margin-left: 1.5rem;
+  vertical-align: middle;
+  z-index: 10;
+
+  // Hide Google branding for a cleaner look (allowed by Google)
+  .goog-logo-link, .goog-te-gadget span {
+    display: none !important;
+  }
+  .goog-te-gadget {
+    color: $primary !important;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif !important;
+    font-size: 1rem !important;
+  }
+  select {
+    border: 1px solid $primary;
+    border-radius: 6px;
+    padding: 0.2rem 0.7rem;
+    background: #fff;
+    color: $primary;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: border 0.2s;
+    &:hover, &:focus {
+      border-color: $secondary;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .google-translate {
+    margin-left: 0.5rem;
+    select {
+      font-size: 0.95rem;
+      padding: 0.15rem 0.5rem;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .google-translate {
+    display: block;
+    margin: 0.5rem auto 0 auto;
+    text-align: center;
+    select {
+      width: 100%;
+      font-size: 0.9rem;
+    }
+  }
+}
