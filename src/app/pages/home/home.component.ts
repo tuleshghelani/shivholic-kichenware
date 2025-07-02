@@ -4,6 +4,8 @@ import { RouterLink } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import Aos from 'aos';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { isPlatformServer } from '@angular/common';
+import { Inject,  } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -13,12 +15,15 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
-  private platformId = inject(PLATFORM_ID);
-  
+  // private platformId = inject(PLATFORM_ID);
+  private sliderInterval: any;
+  private currentIndex = 0;
+
   constructor(
     private sanitizer: DomSanitizer,
     private meta: Meta,
-    private title: Title
+    private title: Title,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.setupSEO();
     this.setupStructuredData();
@@ -57,33 +62,111 @@ export class HomeComponent implements OnInit {
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
-      this.initSlider();
+      this.showSlide(this.currentIndex);
+      this.attachButtonListeners();
+      this.attachIndicatorListeners();
+      this.startAutoSlide();
+      if (!(window as any).googleTranslateElementInit) {
+        (window as any).googleTranslateElementInit = function() {
+          // Desktop
+          if (document.getElementById('google_translate_element')) {
+            new (window as any).google.translate.TranslateElement(
+              {
+                pageLanguage: 'en',
+                layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+              },
+              'google_translate_element'
+            );
+          }
+          // Mobile
+          if (document.getElementById('google_translate_element_mobile')) {
+            new (window as any).google.translate.TranslateElement(
+              {
+                pageLanguage: 'en',
+                layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+              },
+              'google_translate_element_mobile'
+            );
+          }
+        };
+        const script = document.createElement('script');
+        script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        document.body.appendChild(script);
+      }
     }
   }
 
-  private initSlider() {
-    const slides = document.querySelectorAll('.slide');
+  ngOnDestroy() {
+    this.clearAutoSlide();
+  }
+
+  private get slides(): NodeListOf<Element> {
+    return document.querySelectorAll('.slide');
+  }
+
+  private get indicators(): NodeListOf<Element> {
+    return document.querySelectorAll('.indicator');
+  }
+
+  private startAutoSlide() {
+    this.clearAutoSlide();
+    this.sliderInterval = setInterval(() => {
+      this.nextSlide();
+    }, 3000);
+  }
+
+  private clearAutoSlide() {
+    if (this.sliderInterval) {
+      clearInterval(this.sliderInterval);
+    }
+  }
+
+  private showSlide(index: number) {
+    this.slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+    this.indicators.forEach((indicator, i) => {
+      indicator.classList.toggle('active', i === index);
+    });
+    this.currentIndex = index;
+  }
+
+  private nextSlide() {
+    const nextIndex = (this.currentIndex + 1) % this.slides.length;
+    this.showSlide(nextIndex);
+  }
+
+  private prevSlide() {
+    const prevIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+    this.showSlide(prevIndex);
+  }
+
+  private attachButtonListeners() {
     const prevBtn = document.querySelector('.slider-btn.prev');
     const nextBtn = document.querySelector('.slider-btn.next');
-    let current = 0;
-
-    function showSlide(idx: number) {
-      slides.forEach((slide, i) => {
-        (slide as HTMLElement).classList.toggle('active', i === idx);
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        this.prevSlide();
+        this.startAutoSlide();
       });
     }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        this.nextSlide();
+        this.startAutoSlide();
+      });
+    }
+  }
 
-    prevBtn?.addEventListener('click', () => {
-      current = (current - 1 + slides.length) % slides.length;
-      showSlide(current);
+  private attachIndicatorListeners() {
+    this.indicators.forEach((indicator, i) => {
+      indicator.addEventListener('click', () => {
+        this.showSlide(i);
+        this.startAutoSlide();
+      });
     });
-
-    nextBtn?.addEventListener('click', () => {
-      current = (current + 1) % slides.length;
-      showSlide(current);
-    });
-
-    showSlide(current);
   }
 
   premiumProducts = [
