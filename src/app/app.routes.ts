@@ -13,5 +13,9 @@ export const routes: Routes = [
     path: 'contact-us',
     loadComponent: () => import('./pages/contact-us/contact-us.component').then(m => m.ContactUsComponent)
   },
+  {
+    path: 'group-of-companies',
+    loadComponent: () => import('./pages/group-of-companies/group-of-companies.component').then(m => m.GroupOfCompaniesComponent)
+  },
   // ... other routes
 ];
