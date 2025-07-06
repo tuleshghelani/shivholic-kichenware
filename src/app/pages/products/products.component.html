@@ -9,3 +9,45 @@
       </div>
     </div>
 </section>
+
+<div class="products-page">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-title">Our Products</div>
+    <ul>
+      <li (click)="showAllProducts()" [class.selected]="!selectedCategory">All</li>
+      <li *ngFor="let cat of categories"
+          (click)="selectCategory(cat)"
+          [class.selected]="cat === selectedCategory">
+        {{ cat }}
+      </li>
+    </ul>
+  </aside>
+
+  <!-- Main Product Grid -->
+  <main class="product-main">
+    <div class="product-grid">
+      <div *ngFor="let product of products" class="product-card" (click)="openProduct(product)">
+        <img [src]="product.images[0]" [alt]="product.name" loading="lazy" />
+        <div class="product-title">{{ product.name }}</div>
+        <div class="product-description">{{ product.description }}</div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Product Modal -->
+<div class="modal-backdrop" *ngIf="showModal" (click)="closeModal()"></div>
+<div class="product-modal" *ngIf="showModal">
+  <button class="close-btn" (click)="closeModal()">×</button>
+  <div class="modal-content">
+    <div class="modal-images">
+      <img *ngFor="let img of selectedProduct?.images" [src]="img" [alt]="selectedProduct?.name" />
+    </div>
+    <div class="modal-details">
+      <h4>{{ selectedProduct?.name }}</h4>
+      <p>{{ selectedProduct?.description }}</p>
+      <div class="details">{{ selectedProduct?.details }}</div>
+    </div>
+  </div>
+</div>
