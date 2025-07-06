@@ -26,8 +26,14 @@
 
   <!-- Main Product Grid -->
   <main class="product-main">
-    <div class="product-grid">
-      <div *ngFor="let product of products" class="product-card" (click)="openProduct(product)">
+    <div class="product-grid" role="list">
+      <div *ngFor="let product of products" 
+           class="product-card" 
+           (click)="openModal(product)" 
+           (keydown.enter)="openModal(product)" 
+           tabindex="0" 
+           role="listitem"
+           [attr.aria-label]="'View details of ' + product.name">
         <img [src]="product.images[0]" [alt]="product.name" loading="lazy" />
         <div class="product-title">{{ product.name }}</div>
         <div class="product-description">{{ product.description }}</div>
@@ -36,18 +42,57 @@
   </main>
 </div>
 
+<!-- Back to Top Button -->
+<button 
+  *ngIf="showBackToTop" 
+  class="back-to-top" 
+  (click)="scrollToTop()" 
+  aria-label="Back to top"
+>
+  <i class="fas fa-arrow-up"></i>
+</button>
+
 <!-- Product Modal -->
-<div class="modal-backdrop" *ngIf="showModal" (click)="closeModal()"></div>
-<div class="product-modal" *ngIf="showModal">
-  <button class="close-btn" (click)="closeModal()">×</button>
+<div class="modal-backdrop" *ngIf="showModal" (click)="closeModal()" aria-hidden="true"></div>
+<div class="product-modal" *ngIf="showModal" role="dialog" aria-modal="true" aria-labelledby="product-title">
+  <button class="close-btn" (click)="closeModal()" aria-label="Close product details">×</button>
   <div class="modal-content">
-    <div class="modal-images">
-      <img *ngFor="let img of selectedProduct?.images" [src]="img" [alt]="selectedProduct?.name" />
+    <div class="modal-gallery">
+      <!-- Main Image Frame -->
+      <div class="main-image-container">
+        <img 
+          [src]="selectedProduct?.images?.[selectedImageIndex]"
+          [alt]="selectedProduct?.name" 
+          class="main-image" 
+          loading="lazy" 
+        />
+      </div>
+      
+      <!-- Thumbnail Images -->
+      <div class="thumbnail-container">
+        <div 
+          *ngFor="let img of selectedProduct?.images; let i = index" 
+          class="thumbnail" 
+          [class.active]="i === selectedImageIndex"
+          (click)="selectImage(i)" 
+          (keydown.enter)="selectImage(i)"
+          tabindex="0"
+          [attr.aria-label]="'View image ' + (i+1) + ' of ' + selectedProduct?.name"
+        >
+          <img [src]="img" [alt]="selectedProduct?.name + ' thumbnail ' + (i+1)" loading="lazy" />
+        </div>
+      </div>
     </div>
+    
     <div class="modal-details">
-      <h4>{{ selectedProduct?.name }}</h4>
-      <p>{{ selectedProduct?.description }}</p>
-      <div class="details">{{ selectedProduct?.details }}</div>
+      <h3 id="product-title">{{ selectedProduct?.name }}</h3>
+      <p class="product-description">{{ selectedProduct?.description }}</p>
+      <div class="details-container">
+        <h4>Product Details</h4>
+        <div class="details-content">
+          <pre>{{ selectedProduct?.details }}</pre>
+        </div>
+      </div>
     </div>
   </div>
 </div>
