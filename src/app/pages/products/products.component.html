@@ -11,21 +11,60 @@
 </section>
 
 <div class="products-page">
-  <!-- Sidebar -->
+  <!-- Enhanced Sidebar with Product Dropdowns -->
   <aside class="sidebar">
     <div class="sidebar-title">Our Products</div>
-    <ul>
-      <li (click)="showAllProducts()" [class.selected]="!selectedCategory">All</li>
-      <li *ngFor="let cat of categories"
-          (click)="selectCategory(cat)"
-          [class.selected]="cat === selectedCategory">
-        {{ cat }}
+    <ul class="category-list">
+      <li class="category-item all-products" 
+          (click)="showAllProducts()" 
+          [class.selected]="!selectedCategory">
+        <span class="category-name">All Products</span>
+        <span class="product-count">({{ productService.getProducts().length }})</span>
+      </li>
+      
+      <li *ngFor="let category of categories" 
+          class="category-item"
+          [class.selected]="category.name === selectedCategory"
+          [class.expanded]="category.isExpanded">
+        
+        <!-- Category Header -->
+        <div class="category-header" (click)="selectCategory(category)">
+          <span class="category-name">{{ category.name }}</span>
+          <span class="product-count">({{ category.products.length }})</span>
+          <button class="expand-btn" 
+                  (click)="toggleCategoryExpansion(category, $event)"
+                  [attr.aria-label]="'Toggle ' + category.name + ' products'"
+                  [attr.aria-expanded]="category.isExpanded">
+            <i class="fas fa-chevron-down" [class.rotated]="category.isExpanded"></i>
+          </button>
+        </div>
+        
+        <!-- Product Dropdown -->
+        <ul class="product-dropdown" 
+            [class.show]="category.isExpanded"
+            role="list">
+          <li *ngFor="let product of category.products" 
+              class="product-item"
+              (click)="selectProductFromDropdown(product, category, $event)"
+              [attr.aria-label]="'View ' + product.name + ' details'">
+            <img [src]="product.images[0]" [alt]="product.name" loading="lazy" />
+            <div class="product-info">
+              <span class="product-name">{{ product.name }}</span>
+              <span class="product-desc">{{ product.description }}</span>
+            </div>
+          </li>
+        </ul>
       </li>
     </ul>
   </aside>
 
   <!-- Main Product Grid -->
   <main class="product-main">
+    <div class="product-header" *ngIf="selectedCategory">
+      <h2 class="category-title">{{ selectedCategory }}</h2>
+      <p class="category-description">Showing {{ products.length }} product{{ products.length !== 1 ? 's' : '' }}</p>
+    </div>
+    
     <div class="product-grid" role="list">
       <div *ngFor="let product of products" 
            class="product-card" 
@@ -38,6 +77,15 @@
         <div class="product-title">{{ product.name }}</div>
         <div class="product-description">{{ product.description }}</div>
       </div>
+    </div>
+    
+    <!-- Empty State -->
+    <div *ngIf="products.length === 0" class="empty-state">
+      <div class="empty-icon">
+        <i class="fas fa-box-open"></i>
+      </div>
+      <h3>No Products Found</h3>
+      <p>No products available in this category at the moment.</p>
     </div>
   </main>
 </div>
