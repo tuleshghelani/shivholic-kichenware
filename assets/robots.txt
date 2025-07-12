@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://Shivholic.co.uk/sitemap.xml 
+Sitemap: https://shivholickitchenware.com/sitemap.xml
