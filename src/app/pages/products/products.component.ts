@@ -87,10 +87,12 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this.products = category.products;
     this.scrollToProducts();
     
-    // Close other expanded categories
+    // Expand the selected category and close others
     this.categories.forEach(cat => {
-      if (cat.name !== category.name) {
-        cat.isExpanded = false;
+      if (cat.name === category.name) {
+        cat.isExpanded = true; // Expand the selected category
+      } else {
+        cat.isExpanded = false; // Close other categories
       }
     });
   }
