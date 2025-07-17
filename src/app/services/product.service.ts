@@ -12,6 +12,20 @@ export interface Product {
 export class ProductService {
   private products: Product[] = [
     {
+      name: 'Regular Chilli Cutter',
+      images: [
+        'assets/products/Chilly-cutter/Regular-chilli-cutter/regular-chilli-cutter-1.jpg',
+        'assets/products/Chilly-cutter/Regular-chilli-cutter/regular-chilli-cutter-2.jpg',
+        'assets/products/Chilly-cutter/Regular-chilli-cutter/regular-chilli-cutter-3.jpg',
+        'assets/products/Chilly-cutter/Regular-chilli-cutter/regular-chilli-cutter-4.jpg',
+        'assets/products/Chilly-cutter/Regular-chilli-cutter/regular-chilli-cutter-5.jpg',
+        'assets/products/Chilly-cutter/Regular-chilli-cutter/regular-chilli-cutter-6.jpg'
+      ],
+      description: 'High-quality plastic/PET chilli cutter designed for efficient and precise cutting of green chilies. Perfect for everyday kitchen use.',
+      details: 'Material: Premium Plastic/PET\nDimensions: Standard Size\nFeatures: Sharp Cutting Blades, Ergonomic Design, Easy to Clean\nDurability: Long-lasting, Lightweight\nUsage: Ideal for cutting green chilies for cooking\nMaintenance: Hand wash recommended\nManufactured by: Shivholic Kitchenware',
+      category: 'Chilli Cutter'
+    },
+    {
       name: 'Kitchen Ware Masala Box',
       images: [
         'assets/products/masala-box/masala-box-1.jpg',
@@ -70,5 +84,23 @@ export class ProductService {
   getProducts(category?: string) {
     if (!category) return this.products;
     return this.products.filter(p => p.category === category);
+  }
+
+  getProductById(id: string): Product | undefined {
+    // Convert product name to ID format (lowercase, hyphenated)
+    return this.products.find(p => this.convertToId(p.name) === id);
+  }
+
+  getRelatedProducts(productId: string, limit: number = 3): Product[] {
+    const product = this.getProductById(productId);
+    if (!product) return [];
+    
+    return this.products
+      .filter(p => p.category === product.category && this.convertToId(p.name) !== productId)
+      .slice(0, limit);
+  }
+
+  private convertToId(name: string): string {
+    return name.toLowerCase().replace(/\s+/g, '-');
   }
 }

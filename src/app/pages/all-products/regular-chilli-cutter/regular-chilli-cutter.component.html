@@ -1,0 +1,206 @@
+<!-- Hero Section -->
+<section class="product-hero" aria-label="Regular Chilli Cutter">
+  <div class="hero-background">
+    <img src="assets/logo/about-kitchenware-2.jpg" alt="Shivholic Kitchenware Manufacturing Facility" loading="lazy" width="1920" height="1080" />
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content only-title">
+      <h1>Regular Chilli Cutter - Premium Kitchen Tool</h1>
+      <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <ol class="breadcrumb">
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/products">Products</a></li>
+          <li><span>Regular Chilli Cutter</span></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<!-- Product Details Section -->
+<section class="product-details" *ngIf="product" itemscope itemtype="https://schema.org/Product">
+  <div class="container">
+    <div class="product-layout">
+      <!-- Product Gallery -->
+      <div class="product-gallery">
+        <!-- Main Image -->
+        <div class="main-image-container">
+          <img 
+            [src]="product.images[selectedImageIndex]" 
+            [alt]="'Regular Chilli Cutter - ' + (selectedImageIndex + 1)" 
+            class="main-image" 
+            loading="lazy"
+            itemprop="image"
+            width="600" 
+            height="600"
+          />
+        </div>
+        
+        <!-- Thumbnail Images -->
+        <div class="thumbnail-container">
+          <div 
+            *ngFor="let img of product.images; let i = index" 
+            class="thumbnail" 
+            [class.active]="i === selectedImageIndex"
+            (click)="selectImage(i)" 
+            (keydown.enter)="selectImage(i)"
+            tabindex="0"
+            [attr.aria-label]="'View image ' + (i+1) + ' of Regular Chilli Cutter'"
+          >
+            <img [src]="img" [alt]="'Regular Chilli Cutter thumbnail ' + (i+1)" loading="lazy" width="100" height="100" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- Product Information -->
+      <div class="product-info">
+        <h2 itemprop="name">Regular Chilli Cutter</h2>
+        
+        <div class="product-description" itemprop="description">
+          <p>{{ product.description }}</p>
+        </div>
+        
+        <div class="product-features">
+          <h3>Key Features</h3>
+          <ul>
+            <li><strong>Premium Material:</strong> Made from high-quality plastic/PET material for durability and lightweight handling</li>
+            <li><strong>Ergonomic Design:</strong> Comfortable grip for easy handling during food preparation</li>
+            <li><strong>Sharp Blades:</strong> Precision-engineered cutting blades for efficient chopping</li>
+            <li><strong>Easy to Clean:</strong> Simple maintenance with hand washing recommended</li>
+            <li><strong>Lightweight:</strong> Designed for comfortable use during extended food preparation</li>
+          </ul>
+        </div>
+        
+        <div class="product-specifications">
+          <h3>Product Specifications</h3>
+          <table>
+            <tbody>
+              <tr>
+                <th>Material</th>
+                <td>Premium Plastic/PET</td>
+              </tr>
+              <tr>
+                <th>Dimensions</th>
+                <td>Standard Size</td>
+              </tr>
+              <tr>
+                <th>Maintenance</th>
+                <td>Hand wash recommended</td>
+              </tr>
+              <tr>
+                <th>Manufacturer</th>
+                <td itemprop="brand">Shivholic Kitchenware</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="product-cta">
+          <a href="/contact-us" class="cta-button">Contact for Pricing</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product Benefits Section -->
+<section class="product-benefits">
+  <div class="container">
+    <h2>Why Choose Our Regular Chilli Cutter?</h2>
+    
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-medal"></i>
+        </div>
+        <h3>Premium Quality</h3>
+        <p>Crafted from high-grade plastic/PET material that ensures durability and lightweight performance in your kitchen.</p>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-hand-holding"></i>
+        </div>
+        <h3>Ergonomic Design</h3>
+        <p>Designed with user comfort in mind, featuring an easy-grip handle that reduces strain during food preparation.</p>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-cut"></i>
+        </div>
+        <h3>Efficient Cutting</h3>
+        <p>Sharp, precision-engineered blades ensure clean cuts every time, saving you valuable preparation time.</p>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-feather-alt"></i>
+        </div>
+        <h3>Lightweight Design</h3>
+        <p>The lightweight construction makes it easy to handle for extended periods, reducing hand fatigue during meal preparation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Usage Instructions Section -->
+<section class="usage-instructions">
+  <div class="container">
+    <h2>How to Use Your Chilli Cutter</h2>
+    
+    <div class="instructions-grid">
+      <div class="instruction-step">
+        <div class="step-number">1</div>
+        <h3>Prepare Your Chilies</h3>
+        <p>Wash and dry green chilies thoroughly before cutting.</p>
+      </div>
+      
+      <div class="instruction-step">
+        <div class="step-number">2</div>
+        <h3>Position the Chilli</h3>
+        <p>Place the chilli in the cutter's groove, ensuring it's properly aligned.</p>
+      </div>
+      
+      <div class="instruction-step">
+        <div class="step-number">3</div>
+        <h3>Cut with Precision</h3>
+        <p>Apply gentle pressure and use a rocking motion for efficient cutting.</p>
+      </div>
+      
+      <div class="instruction-step">
+        <div class="step-number">4</div>
+        <h3>Clean After Use</h3>
+        <p>Hand wash with mild soap and dry thoroughly to maintain quality.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related Products Section -->
+<section class="related-products" *ngIf="relatedProducts.length > 0">
+  <div class="container">
+    <h2>You May Also Like</h2>
+    
+    <div class="related-products-grid">
+      <div *ngFor="let relatedProduct of relatedProducts" class="related-product-card">
+        <img [src]="relatedProduct.images[0]" [alt]="relatedProduct.name" loading="lazy" width="300" height="300" />
+        <h3>{{ relatedProduct.name }}</h3>
+        <p>{{ relatedProduct.description }}</p>
+        <a routerLink="/products" class="view-product-btn">View Details</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready to Enhance Your Kitchen Experience?</h2>
+      <p>Contact us today to learn more about our premium Regular Chilli Cutter and other quality kitchenware products.</p>
+      <a routerLink="/contact-us" class="cta-button">Contact Us Now</a>
+    </div>
+  </div>
+</section>

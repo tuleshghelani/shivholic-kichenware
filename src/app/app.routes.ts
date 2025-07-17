@@ -21,5 +21,9 @@ export const routes: Routes = [
     path: 'products',
     loadComponent: () => import('./pages/products/products.component').then(m => m.ProductsComponent)
   },
+  {
+    path: 'product/chilli-cutter/regular-chilli-cutter',
+    loadComponent: () => import('./pages/all-products/regular-chilli-cutter/regular-chilli-cutter.component').then(m => m.RegularChilliCutterComponent)
+  },
   // ... other routes
 ];
