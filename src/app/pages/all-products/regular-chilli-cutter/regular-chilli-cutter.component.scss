@@ -141,6 +141,7 @@
     @include desktop {
       max-width: 1400px;
       padding: 0 3rem;
+      width: 100%;
     }
   }
   
@@ -152,6 +153,10 @@
     @include tablet {
       flex-direction: row;
       align-items: flex-start;
+    }
+    
+    @include desktop {
+      gap: 4rem;
     }
   }
   
@@ -165,6 +170,10 @@
       top: 2rem;
     }
     
+    @include desktop {
+      flex: 0 0 45%;
+    }
+    
     .main-image-container {
       width: 100%;
       margin-bottom: 1.5rem;
@@ -172,11 +181,23 @@
       overflow: hidden;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
       
+      @include desktop {
+        height: 450px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
       .main-image {
         width: 100%;
         height: auto;
         display: block;
         transition: transform 0.4s ease;
+        
+        @include desktop {
+          object-fit: contain;
+          max-height: 100%;
+        }
         
         &:hover {
           transform: scale(1.03);
@@ -194,6 +215,11 @@
         justify-content: flex-start;
       }
       
+      @include desktop {
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+      
       .thumbnail {
         flex: 0 0 calc(20% - 0.75rem);
         cursor: pointer;
@@ -201,6 +227,10 @@
         overflow: hidden;
         border: 2px solid transparent;
         transition: all 0.3s ease;
+        
+        @include desktop {
+          flex: 0 0 calc(20% - 1rem);
+        }
         
         &.active {
           border-color: $primary;
@@ -231,7 +261,8 @@
     }
     
     @include desktop {
-      padding-left: 2rem;
+      padding-left: 3rem;
+      flex: 0 0 55%;
     }
     
     h2 {
@@ -421,11 +452,12 @@
     }
     
     @include tablet {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 2.5rem;
     }
     
     @include desktop {
+      grid-template-columns: repeat(4, 1fr);
       gap: 3rem;
     }
   }
@@ -437,6 +469,10 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
     transition: all 0.4s ease;
     text-align: center;
+    // height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     
     @include desktop {
       padding: 3rem 2rem;
@@ -451,6 +487,8 @@
       font-size: 3rem;
       color: $primary;
       margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: center;
       
       @include desktop {
         font-size: 3.5rem;
@@ -518,10 +556,11 @@
     }
     
     @include tablet {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
     
     @include desktop {
+      grid-template-columns: repeat(4, 1fr);
       gap: 3.5rem 3rem;
     }
   }
@@ -796,6 +835,8 @@
   }
   
   .product-details {
+    padding: 2rem 0 3rem;
+    
     .product-info h2 {
       font-size: 1.75rem;
     }
@@ -827,14 +868,36 @@
     }
   }
   
-  .product-gallery .thumbnail-container .thumbnail {
-    flex: 0 0 calc(33.333% - 0.5rem);
+  .product-gallery {
+    .main-image-container {
+      margin-bottom: 1rem;
+    }
+    
+    .thumbnail-container {
+      gap: 0.5rem;
+      
+      .thumbnail {
+        flex: 0 0 calc(33.333% - 0.5rem);
+      }
+    }
   }
   
   .product-benefits .benefit-card,
   .usage-instructions .instruction-step,
   .related-products .related-product-card {
     padding: 1.5rem 1rem;
+  }
+  
+  .product-details {
+    .product-layout {
+      gap: 2rem;
+    }
+    
+    .product-gallery {
+      .main-image-container {
+        height: auto;
+      }
+    }
   }
   
   .cta-section .cta-content {
