@@ -7,6 +7,7 @@
   position: relative;
   height: 50vh;
   min-height: 300px;
+  padding-top: 5rem;
   overflow: hidden;
   margin-bottom: 3rem;
   
@@ -320,13 +321,13 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: $secondary-color;
+            color: $text-dark;
             font-weight: bold;
             font-size: 1.1rem;
           }
           
           strong {
-            color: $text-dark;
+            color: $secondary;
             font-weight: 600;
           }
         }
