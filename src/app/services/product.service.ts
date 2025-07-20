@@ -227,6 +227,16 @@ export class ProductService {
       details: 'Material: Premium Glass\nCapacity: 290ml\nFeatures: Unique Shape, Balanced Weight, Designer Aesthetics\nDurability: High-Quality Construction, Resistant to Chipping\nUsage: Perfect for cocktails, spirits, and entertaining\nMaintenance: Hand wash recommended\nManufactured by: Shivholic Kitchenware',
       category: 'Glass'
     },
+    {
+      name: 'Glass With Straw',
+      images: [
+        'assets/products/glass-with-straw/glass-with-straw-1.jpg',
+        'assets/products/glass-with-straw/glass-with-straw-2.jpg'
+      ],
+      description: 'Premium glass with integrated straw design for convenient sipping. The innovative combination offers a stylish and eco-friendly alternative to disposable straws while enhancing your beverage experience.',
+      details: 'Material: High-Quality Borosilicate Glass\nCapacity: 350ml\nFeatures: Built-in Glass Straw, Leak-Proof Design, Wide Mouth, Ergonomic Grip\nDurability: Heat-Resistant, Thermal Shock Proof, Dishwasher Safe\nUsage: Perfect for smoothies, juices, iced coffee, cocktails, and cold beverages\nMaintenance: Dishwasher safe, includes specialized cleaning brush\nManufactured by: Shivholic Kitchenware',
+      category: 'glass-with-straw'
+    },
     // Add more products here, with their respective categories
   ];
 
