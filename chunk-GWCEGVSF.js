@@ -37,13 +37,7 @@ Maintenance: Hand wash only, occasional wood conditioning recommended
 Manufactured by: Shivholic Kitchenware`,category:"Chilli Cutter"},{name:"Kitchen Ware Masala Box",images:["assets/products/masala-box/masala-box-1.jpg","assets/products/masala-box/masala-box-2.jpg","assets/products/masala-box/masala-box-3.jpg","assets/products/masala-box/masala-box-4.jpg"],description:"Premium quality masala box for your kitchen. Keeps your spices fresh and organized.",details:`Material: Stainless Steel
 Capacity: 7 containers
 Finish: Mirror Polish
-Dishwasher Safe: Yes`,category:"Masala Box"},{name:"Kitchen Ware Masala Box 2",images:["assets/products/masala-box/masala-box-1.jpg","assets/products/masala-box/masala-box-2.jpg","assets/products/masala-box/masala-box-3.jpg","assets/products/masala-box/masala-box-4.jpg"],description:"Premium quality masala box for your kitchen. Keeps your spices fresh and organized.",details:`Material: Stainless Steel
-Capacity: 7 containers
-Finish: Mirror Polish
 Dishwasher Safe: Yes`,category:"Masala Box"},{name:"Kitchenware Jug",images:["assets/products/jug/jug-1.jpg","assets/products/jug/jug-2.jpg","assets/products/jug/jug-3.jpg","assets/products/jug/jug-4.jpg"],description:"Elegant jug for serving water and beverages. Perfect for home and parties.",details:`Material: Stainless Steel
-Capacity: 1.5L
-Finish: Glossy
-Dishwasher Safe: Yes`,category:"Jug"},{name:"Kitchenware Jug 2",images:["assets/products/jug/jug-1.jpg","assets/products/jug/jug-2.jpg","assets/products/jug/jug-3.jpg","assets/products/jug/jug-4.jpg"],description:"Elegant jug for serving water and beverages. Perfect for home and parties.",details:`Material: Stainless Steel
 Capacity: 1.5L
 Finish: Glossy
 Dishwasher Safe: Yes`,category:"Jug"},{name:"Capture Glass",images:["assets/products/glass/capture-glass/capture-glass-1.jpg","assets/products/glass/capture-glass/capture-glass-2.jpg","assets/products/glass/capture-glass/capture-glass-3.jpg"],description:"Elegant capture glass with crystal-clear transparency. Perfect for capturing the essence of your favorite beverages with style and sophistication.",details:`Material: Premium Crystal Glass
