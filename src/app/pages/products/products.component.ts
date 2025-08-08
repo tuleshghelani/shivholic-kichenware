@@ -140,6 +140,13 @@ export class ProductsComponent implements OnInit, OnDestroy {
   }
 
   openModal(product: Product) {
+    // If product has a URL, redirect to it instead of opening the modal
+    if (product.url && isPlatformBrowser(this.platformId)) {
+      window.location.href = product.url;
+      return;
+    }
+    
+    // Otherwise, open the modal as usual
     this.selectedProduct = product;
     this.selectedImageIndex = 0;
     this.showModal = true;

@@ -25,5 +25,11 @@ export const routes: Routes = [
     path: 'product/chilli-cutter/regular-chilli-cutter',
     loadComponent: () => import('./pages/all-products/regular-chilli-cutter/regular-chilli-cutter.component').then(m => m.RegularChilliCutterComponent)
   },
+  {
+    path: 'product/chilli-cutter',
+    loadComponent: () => import('./pages/category-wise-products/chilli-cutter/chilli-cutter.component').then(m => m.ChilliCutterComponent)
+
+  },
+
   // ... other routes
 ];

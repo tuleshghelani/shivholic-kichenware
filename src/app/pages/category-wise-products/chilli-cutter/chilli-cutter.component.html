@@ -1,0 +1,99 @@
+<section class="category-hero" aria-label="Chilli Cutter Products">
+  <div class="hero-background">
+    <img src="assets/products/Chilly-cutter/Regular-chilli-cutter/regular-chilli-cutter-1.jpg" alt="Chilli Cutter Products" loading="lazy" />
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content only-title">
+      <h1>Chilli Cutter Products</h1>
+    </div>
+  </div>
+</section>
+
+<div class="category-page">
+  <!-- Main Product Grid -->
+  <main class="product-main">
+    <div class="product-header">
+      <h2 class="category-title">Chilli Cutter</h2>
+      <p class="category-description">Showing {{ products.length }} product{{ products.length !== 1 ? 's' : '' }}</p>
+    </div>
+    
+    <div class="product-grid" role="list">
+      <div *ngFor="let product of products" 
+           class="product-card" 
+           (click)="openModal(product)" 
+           (keydown.enter)="openModal(product)" 
+           tabindex="0" 
+           role="listitem"
+           [attr.aria-label]="'View details of ' + product.name">
+        <img [src]="product.images[0]" [alt]="product.name" loading="lazy" />
+        <div class="product-title">{{ product.name }}</div>
+        <div class="product-description">{{ product.description }}</div>
+      </div>
+    </div>
+    
+    <!-- Empty State -->
+    <div *ngIf="products.length === 0" class="empty-state">
+      <div class="empty-icon">
+        <i class="fas fa-box-open"></i>
+      </div>
+      <h3>No Products Found</h3>
+      <p>No chilli cutter products available at the moment.</p>
+    </div>
+  </main>
+</div>
+
+<!-- Back to Top Button -->
+<button 
+  *ngIf="showBackToTop" 
+  class="back-to-top" 
+  (click)="scrollToTop()" 
+  aria-label="Back to top"
+>
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- Product Modal -->
+<div class="modal-backdrop" *ngIf="showModal" (click)="closeModal()" aria-hidden="true"></div>
+<div class="product-modal" *ngIf="showModal" role="dialog" aria-modal="true" aria-labelledby="product-title">
+  <button class="close-btn" (click)="closeModal()" aria-label="Close product details">×</button>
+  <div class="modal-content">
+    <div class="modal-gallery">
+      <!-- Main Image Frame -->
+      <div class="main-image-container">
+        <img 
+          [src]="selectedProduct?.images?.[selectedImageIndex]"
+          [alt]="selectedProduct?.name" 
+          class="main-image" 
+          loading="lazy" 
+        />
+      </div>
+      
+      <!-- Thumbnail Images -->
+      <div class="thumbnail-container">
+        <div 
+          *ngFor="let img of selectedProduct?.images; let i = index" 
+          class="thumbnail" 
+          [class.active]="i === selectedImageIndex"
+          (click)="selectImage(i)" 
+          (keydown.enter)="selectImage(i)"
+          tabindex="0"
+          [attr.aria-label]="'View image ' + (i+1) + ' of ' + selectedProduct?.name"
+        >
+          <img [src]="img" [alt]="selectedProduct?.name + ' thumbnail ' + (i+1)" loading="lazy" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal-details">
+      <h3 id="product-title">{{ selectedProduct?.name }}</h3>
+      <p class="product-description">{{ selectedProduct?.description }}</p>
+      <div class="details-container">
+        <h4>Product Details</h4>
+        <div class="details-content">
+          <pre>{{ selectedProduct?.details }}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
