@@ -4,37 +4,37 @@ Features: Sharp Cutting Blades, Ergonomic Design, Easy to Clean
 Durability: Long-lasting, Lightweight
 Usage: Ideal for cutting green chilies for cooking
 Maintenance: Hand wash recommended
-Manufactured by: Shivholic Kitchenware`,category:"Chilli Cutter"},{name:"Jumbo Chilli Cutter",images:["assets/products/Chilly-cutter/Jumbo-chilli-cutter/jumbo-chilli-cutter-1.jpg"],description:"Extra-large plastic chilli cutter with enhanced capacity for bulk preparation. Perfect for restaurants and large family meals.",details:`Material: Premium Plastic/PET
+Manufactured by: Shivholic Kitchenware`,category:"Chilli Cutter",url:"product/chilli-cutter"},{name:"Jumbo Chilli Cutter",images:["assets/products/Chilly-cutter/Jumbo-chilli-cutter/jumbo-chilli-cutter-1.jpg"],description:"Extra-large plastic chilli cutter with enhanced capacity for bulk preparation. Perfect for restaurants and large family meals.",details:`Material: Premium Plastic/PET
 Dimensions: Oversized for Bulk Cutting
 Features: Extra-Large Capacity, Reinforced Cutting Mechanism, Comfortable Grip
 Durability: Heavy-Duty Construction, Impact-Resistant
 Usage: Ideal for bulk preparation of green chilies
 Maintenance: Easy to disassemble and clean
-Manufactured by: Shivholic Kitchenware`,category:"Chilli Cutter"},{name:"Premium Chilli Cutter",images:["assets/products/Chilly-cutter/Premium-chilli-cutter/premium-chilli-cutter-1.jpg","assets/products/Chilly-cutter/Premium-chilli-cutter/premium-chilli-cutter-2.jpg","assets/products/Chilly-cutter/Premium-chilli-cutter/premium-chilli-cutter-3.jpg"],description:"Top-tier plastic chilli cutter with advanced design and superior cutting performance. The ultimate kitchen tool for chilli lovers.",details:`Material: High-Grade Plastic/PET
+Manufactured by: Shivholic Kitchenware`,category:"Chilli Cutter",url:"product/chilli-cutter"},{name:"Premium Chilli Cutter",images:["assets/products/Chilly-cutter/Premium-chilli-cutter/premium-chilli-cutter-1.jpg","assets/products/Chilly-cutter/Premium-chilli-cutter/premium-chilli-cutter-2.jpg","assets/products/Chilly-cutter/Premium-chilli-cutter/premium-chilli-cutter-3.jpg"],description:"Top-tier plastic chilli cutter with advanced design and superior cutting performance. The ultimate kitchen tool for chilli lovers.",details:`Material: High-Grade Plastic/PET
 Dimensions: Optimized Size for Maximum Efficiency
 Features: Ultra-Sharp Blades, Precision Engineering, Non-Slip Base, Finger Guard
 Durability: Premium Construction, Dishwasher-Safe Components
 Usage: Perfect for fine and consistent chilli cutting
 Maintenance: Dishwasher safe, easy to clean
-Manufactured by: Shivholic Kitchenware`,category:"Chilli Cutter"},{name:"Round Chilli Cutter",images:["assets/products/Chilly-cutter/Round-chilli-cutter/round-chilli-cutter-1.jpg","assets/products/Chilly-cutter/Round-chilli-cutter/round-chilli-cutter-2.jpg","assets/products/Chilly-cutter/Round-chilli-cutter/round-chilli-cutter-3.jpg"],description:"Innovative circular design plastic chilli cutter for uniform slicing. Creates perfect round chilli pieces for garnishing and cooking.",details:`Material: Premium Plastic/PET
+Manufactured by: Shivholic Kitchenware`,category:"Chilli Cutter",url:"product/chilli-cutter"},{name:"Round Chilli Cutter",images:["assets/products/Chilly-cutter/Round-chilli-cutter/round-chilli-cutter-1.jpg","assets/products/Chilly-cutter/Round-chilli-cutter/round-chilli-cutter-2.jpg","assets/products/Chilly-cutter/Round-chilli-cutter/round-chilli-cutter-3.jpg"],description:"Innovative circular design plastic chilli cutter for uniform slicing. Creates perfect round chilli pieces for garnishing and cooking.",details:`Material: Premium Plastic/PET
 Dimensions: Compact Circular Design
 Features: 360\xB0 Cutting Pattern, Uniform Slice Thickness, Transparent Body
 Durability: Sturdy Construction, Resistant to Stains
 Usage: Specialized for creating round chilli slices
 Maintenance: Hand wash recommended
-Manufactured by: Shivholic Kitchenware`,category:"Chilli Cutter"},{name:"SS Chilli Cutter",images:["assets/products/Chilly-cutter/SS-chilli-cutter/SS-chilli-cutter-1.jpg","assets/products/Chilly-cutter/SS-chilli-cutter/SS-chilli-cutter-2.jpg"],description:"Premium stainless steel chilli cutter offering exceptional durability and cutting precision. The professional choice for serious home cooks.",details:`Material: High-Quality Stainless Steel
+Manufactured by: Shivholic Kitchenware`,category:"Chilli Cutter",url:"product/chilli-cutter"},{name:"SS Chilli Cutter",images:["assets/products/Chilly-cutter/SS-chilli-cutter/SS-chilli-cutter-1.jpg","assets/products/Chilly-cutter/SS-chilli-cutter/SS-chilli-cutter-2.jpg"],description:"Premium stainless steel chilli cutter offering exceptional durability and cutting precision. The professional choice for serious home cooks.",details:`Material: High-Quality Stainless Steel
 Dimensions: Professional Grade Size
 Features: Rust-Resistant Blades, Enhanced Durability, Precision Cutting, Ergonomic Handle
 Durability: Corrosion-Resistant, Lifetime Quality
 Usage: Ideal for daily use with superior cutting performance
 Maintenance: Dishwasher safe, rust-resistant
-Manufactured by: Shivholic Kitchenware`,category:"Chilli Cutter"},{name:"Wooden Chilli Cutter",images:["assets/products/Chilly-cutter/Wooden-chilli-cutter/wooden-chilli-cutter-1.jpg"],description:"Eco-friendly plastic chilli cutter with elegant wooden handle. Combines traditional aesthetics with modern cutting efficiency.",details:`Material: Premium Plastic/PET with Wooden Handle
+Manufactured by: Shivholic Kitchenware`,category:"Chilli Cutter",url:"product/chilli-cutter"},{name:"Wooden Chilli Cutter",images:["assets/products/Chilly-cutter/Wooden-chilli-cutter/wooden-chilli-cutter-1.jpg"],description:"Eco-friendly plastic chilli cutter with elegant wooden handle. Combines traditional aesthetics with modern cutting efficiency.",details:`Material: Premium Plastic/PET with Wooden Handle
 Dimensions: Classic Design with Modern Functionality
 Features: Wooden Grip for Enhanced Comfort, Eco-Friendly Materials, Artisanal Finish
 Durability: Sustainable Construction, Natural Wood Grain
 Usage: Perfect for eco-conscious kitchens
 Maintenance: Hand wash only, occasional wood conditioning recommended
-Manufactured by: Shivholic Kitchenware`,category:"Chilli Cutter"},{name:"Kitchen Ware Masala Box",images:["assets/products/masala-box/masala-box-1.jpg","assets/products/masala-box/masala-box-2.jpg","assets/products/masala-box/masala-box-3.jpg","assets/products/masala-box/masala-box-4.jpg"],description:"Premium quality masala box for your kitchen. Keeps your spices fresh and organized.",details:`Material: Stainless Steel
+Manufactured by: Shivholic Kitchenware`,category:"Chilli Cutter",url:"product/chilli-cutter"},{name:"Kitchen Ware Masala Box",images:["assets/products/masala-box/masala-box-1.jpg","assets/products/masala-box/masala-box-2.jpg","assets/products/masala-box/masala-box-3.jpg","assets/products/masala-box/masala-box-4.jpg"],description:"Premium quality masala box for your kitchen. Keeps your spices fresh and organized.",details:`Material: Stainless Steel
 Capacity: 7 containers
 Finish: Mirror Polish
 Dishwasher Safe: Yes`,category:"Masala Box"},{name:"Kitchenware Jug",images:["assets/products/jug/jug-1.jpg","assets/products/jug/jug-2.jpg","assets/products/jug/jug-3.jpg","assets/products/jug/jug-4.jpg"],description:"Elegant jug for serving water and beverages. Perfect for home and parties.",details:`Material: Stainless Steel
