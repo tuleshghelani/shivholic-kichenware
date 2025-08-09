@@ -208,7 +208,9 @@
 .slide.active .slide-content {
   opacity: 1;
 }
-
+.features-core-services {
+  margin-top: 2rem;
+}
 .features {
   display: flex;
   justify-content: center;
@@ -341,9 +343,16 @@
   }
   .features {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: 1.5rem;
-    .feature-card { max-width: 80%; }
+    padding: 0 15px;
+    
+    .section-header {
+      text-align: center;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
   .slide-overlay--left,
   .slide-overlay--right {
@@ -1176,6 +1185,12 @@
   justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
   .feature-card {
     background: $background-primary;
     border-radius: 18px;
@@ -1190,6 +1205,12 @@
     align-items: center;
     text-align: center;
     transition: box-shadow 0.2s, transform 0.2s;
+    
+    @media (max-width: 768px) {
+      margin: 0 auto 1.5rem;
+      max-width: 85%;
+      align-self: center;
+    }
     &:hover {
       box-shadow: 0 6px 32px $shadow-color-dark;
       border-color: $primary;
@@ -1213,6 +1234,11 @@
       }
     }
     .feature-content {
+      @media (max-width: 768px) {
+        width: 100%;
+        text-align: center;
+      }
+      
       h3 {
         font-size: 1.25rem;
         font-weight: 700;
@@ -1233,6 +1259,12 @@
         li {
           margin-bottom: 0.3rem;
         }
+        
+        @media (max-width: 768px) {
+          width: fit-content;
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
       .feature-cta {
         display: inline-flex;
@@ -1248,6 +1280,10 @@
         transition: background 0.2s, color 0.2s;
         box-shadow: 0 2px 8px $shadow-color;
         outline: none;
+        
+        @media (max-width: 768px) {
+          justify-content: center;
+        }
         border: none;
         cursor: pointer;
         &:hover, &:focus {
