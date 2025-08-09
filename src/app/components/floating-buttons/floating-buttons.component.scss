@@ -1,0 +1,116 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.floating-buttons {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  
+  .floating-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    .button-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      width: 100%;
+      height: 100%;
+      
+      i {
+        font-size: 24px;
+      }
+      
+      span {
+        margin-left: 10px;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+    }
+    
+    &.custom-die {
+      background-color: $primary;
+      color: white;
+      width: auto;
+      height: 50px;
+      padding: 0 20px;
+      
+      .button-content {
+        justify-content: flex-start;
+      }
+      
+      @media (max-width: 768px) {
+        width: 50px;
+        padding: 0;
+        
+        span {
+          display: none;
+        }
+        
+        .button-content {
+          justify-content: center;
+        }
+      }
+    }
+    
+    &.whatsapp {
+      background-color: #25D366;
+      color: white;
+      width: 50px;
+      height: 50px;
+      
+      i {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+// Media queries for responsive design
+@media (max-width: 576px) {
+  .floating-buttons {
+    right: 15px;
+    bottom: 15px;
+    gap: 10px;
+    
+    .floating-button {
+      width: 45px;
+      height: 45px;
+      
+      &.custom-die {
+        width: 45px;
+        height: 45px;
+        padding: 0;
+        
+        span {
+          display: none;
+        }
+      }
+      
+      .button-content i {
+        font-size: 20px;
+      }
+    }
+  }
+}

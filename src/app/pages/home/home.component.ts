@@ -7,11 +7,12 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { isPlatformServer } from '@angular/common';
 import { Inject } from '@angular/core';
 import { CustomizeDiePopupComponent } from '../../components/customize-die-popup/customize-die-popup.component';
+import { FloatingButtonsComponent } from '../../components/floating-buttons/floating-buttons.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, CustomizeDiePopupComponent],
+  imports: [CommonModule, RouterLink, CustomizeDiePopupComponent, FloatingButtonsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
