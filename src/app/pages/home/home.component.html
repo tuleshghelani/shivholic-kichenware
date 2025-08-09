@@ -9,7 +9,7 @@
           <h1>Customize Die, Molding &amp; More</h1>
           <p>Premium solutions for your kitchenware business with unmatched precision and innovation.</p>
           <div class="slide-actions">
-            <a href="/services/customize-die" class="btn-primary">Get Started</a>
+            <a (click)="openCustomizeDiePopup()" class="btn-primary" role="button" tabindex="0">Get Started</a>
             <a href="/about" class="btn-secondary">Learn More</a>
           </div>
         </div>
@@ -63,6 +63,9 @@
     </div>
   </div>
 </section>
+
+<!-- Customize Die Popup -->
+<app-customize-die-popup *ngIf="showCustomizeDiePopup" (close)="closeCustomizeDiePopup()"></app-customize-die-popup>
 
 <!-- Features Section -->
 <section class="features" aria-label="Our Core Services">
@@ -132,7 +135,7 @@
             <li>Material optimization</li>
             <li>Quality assurance</li>
           </ul>
-          <a routerLink="/services/customize-die" class="feature-cta">
+          <a (click)="openCustomizeDiePopup()" class="feature-cta" role="button" tabindex="0">
             <span>Customize Your Die</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -320,7 +323,7 @@
           <li>Material Optimization</li>
           <li>Quality Assurance</li>
         </ul>
-        <a href="/services/customize-die" class="service-cta">Learn More</a>
+        <a (click)="openCustomizeDiePopup()" class="service-cta" role="button" tabindex="0">Learn More</a>
       </div>
       
       <div class="service-card" data-aos="" data-aos-delay="200">

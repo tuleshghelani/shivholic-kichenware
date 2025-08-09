@@ -2,6 +2,19 @@
 @import '../../../styles/mixins';
 @import '../../../styles.scss';
 
+// Cursor pointer for popup triggers
+.feature-cta[role="button"],
+.service-cta[role="button"],
+.btn-primary[role="button"] {
+  cursor: pointer;
+  
+  &:focus-visible {
+    outline: 2px solid $secondary;
+    outline-offset: 2px;
+  }
+}
+
+
 .hero-slider {
   width: 100%;
   position: relative;
@@ -202,7 +215,7 @@
   align-items: stretch;
   gap: 2.5rem;
   margin: 3rem auto 2rem auto;
-  max-width: 1200px;
+  // max-width: 1200px;
   padding: 0 1rem;
 
   .feature-card {

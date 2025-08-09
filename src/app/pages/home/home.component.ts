@@ -5,12 +5,13 @@ import { Meta, Title } from '@angular/platform-browser';
 import Aos from 'aos';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { isPlatformServer } from '@angular/common';
-import { Inject,  } from '@angular/core';
+import { Inject } from '@angular/core';
+import { CustomizeDiePopupComponent } from '../../components/customize-die-popup/customize-die-popup.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, CustomizeDiePopupComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -18,6 +19,7 @@ export class HomeComponent implements OnInit {
   // private platformId = inject(PLATFORM_ID);
   private sliderInterval: any;
   private currentIndex = 0;
+  showCustomizeDiePopup = false;
 
   constructor(
     private sanitizer: DomSanitizer,
@@ -192,4 +194,19 @@ export class HomeComponent implements OnInit {
     },
   ];
 
+  openCustomizeDiePopup(): void {
+    this.showCustomizeDiePopup = true;
+    // Prevent scrolling when popup is open
+    if (isPlatformBrowser(this.platformId)) {
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  closeCustomizeDiePopup(): void {
+    this.showCustomizeDiePopup = false;
+    // Re-enable scrolling when popup is closed
+    if (isPlatformBrowser(this.platformId)) {
+      document.body.style.overflow = '';
+    }
+  }
 }
