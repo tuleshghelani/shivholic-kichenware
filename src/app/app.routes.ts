@@ -28,7 +28,10 @@ export const routes: Routes = [
   {
     path: 'product/chilli-cutter',
     loadComponent: () => import('./pages/category-wise-products/chilli-cutter/chilli-cutter.component').then(m => m.ChilliCutterComponent)
-
+  },
+  {
+    path: 'product/glass',
+    loadComponent: () => import('./pages/category-wise-products/glass/glass.component').then(m => m.GlassComponent)
   },
 
   // ... other routes

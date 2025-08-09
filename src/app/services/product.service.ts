@@ -117,7 +117,8 @@ export class ProductService {
       ],
       description: 'Elegant capture glass with crystal-clear transparency. Perfect for capturing the essence of your favorite beverages with style and sophistication.',
       details: 'Material: Premium Crystal Glass\nCapacity: 300ml\nFeatures: Ergonomic Design, Chip-Resistant Rim, Dishwasher Safe\nDurability: Thermal Shock Resistant\nUsage: Ideal for cocktails, whiskey, and premium beverages\nMaintenance: Dishwasher safe, hand wash recommended for longevity\nManufactured by: Shivholic Kitchenware',
-      category: 'Glass'
+      category: 'Glass',
+      url: 'product/glass'
     },
     {
       name: 'Crystal Glass',
@@ -127,7 +128,8 @@ export class ProductService {
       ],
       description: 'Luxurious crystal glass with exceptional clarity and brilliance. Elevate your dining experience with this premium glassware that combines elegance with durability.',
       details: 'Material: Fine Crystal\nCapacity: 250ml\nFeatures: Brilliant Clarity, Fine Rim, Elegant Design\nDurability: Lead-Free Crystal, Scratch Resistant\nUsage: Perfect for wine, champagne, and special occasions\nMaintenance: Hand wash recommended\nManufactured by: Shivholic Kitchenware',
-      category: 'Glass'
+      category: 'Glass',
+      url: 'product/glass'
     },
     {
       name: 'Diamond Glass',
@@ -136,7 +138,8 @@ export class ProductService {
       ],
       description: 'Stunning diamond-cut glass that reflects light beautifully. The geometric patterns create a mesmerizing display that enhances any beverage presentation.',
       details: 'Material: Premium Cut Glass\nCapacity: 320ml\nFeatures: Diamond-Cut Pattern, Heavy Base, Refraction Design\nDurability: Chip-Resistant, High-Quality Construction\nUsage: Ideal for whiskey, bourbon, and premium spirits\nMaintenance: Hand wash only\nManufactured by: Shivholic Kitchenware',
-      category: 'Glass'
+      category: 'Glass',
+      url: 'product/glass'
     },
     {
       name: 'Faluda Glass',
@@ -145,7 +148,8 @@ export class ProductService {
       ],
       description: 'Specialized faluda glass designed specifically for serving traditional faluda and dessert beverages. The tall, elegant design showcases layered desserts beautifully.',
       details: 'Material: High-Quality Glass\nCapacity: 400ml\nFeatures: Tall Design, Wide Mouth, Stable Base\nDurability: Thermal Resistant, Everyday Use\nUsage: Perfect for faluda, milkshakes, and layered desserts\nMaintenance: Dishwasher safe\nManufactured by: Shivholic Kitchenware',
-      category: 'Glass'
+      category: 'Glass',
+      url: 'product/glass'
     },
     {
       name: 'Martin Glass',
@@ -156,7 +160,8 @@ export class ProductService {
       ],
       description: 'Classic martini glass with a contemporary twist. The iconic V-shaped bowl and slender stem create an elegant silhouette for sophisticated cocktail service.',
       details: 'Material: Crystal-Clear Glass\nCapacity: 200ml\nFeatures: V-Shaped Bowl, Slender Stem, Stable Base\nDurability: Reinforced Stem Connection, Break-Resistant\nUsage: Ideal for martinis, cosmopolitans, and cocktails\nMaintenance: Hand wash recommended\nManufactured by: Shivholic Kitchenware',
-      category: 'Glass'
+      category: 'Glass',
+      url: 'product/glass'
     },
     {
       name: 'Matt Glass',
@@ -166,7 +171,8 @@ export class ProductService {
       ],
       description: 'Sophisticated matte-finished glass with a modern aesthetic. The frosted exterior provides an elegant tactile experience while maintaining crystal clarity inside.',
       details: 'Material: Frosted Glass\nCapacity: 350ml\nFeatures: Matte Exterior, Smooth Interior, Contemporary Design\nDurability: Scratch-Resistant Finish, Sturdy Construction\nUsage: Perfect for water, juice, and everyday beverages\nMaintenance: Dishwasher safe\nManufactured by: Shivholic Kitchenware',
-      category: 'Glass'
+      category: 'Glass',
+      url: 'product/glass'
     },
     {
       name: 'Merito Glass',
@@ -178,7 +184,8 @@ export class ProductService {
       ],
       description: 'Premium merito glass with exceptional craftsmanship and elegant detailing. The balanced proportions and refined design make it perfect for upscale dining settings.',
       details: 'Material: Premium Glass\nCapacity: 280ml\nFeatures: Balanced Weight, Smooth Rim, Elegant Silhouette\nDurability: High-Quality Construction, Chip-Resistant\nUsage: Ideal for wine, water, and fine dining\nMaintenance: Hand wash recommended\nManufactured by: Shivholic Kitchenware',
-      category: 'Glass'
+      category: 'Glass',
+      url: 'product/glass'
     },
     {
       name: 'Metro Ring Glass',
@@ -188,7 +195,8 @@ export class ProductService {
       ],
       description: 'Contemporary metro ring glass featuring a distinctive ringed pattern. The modern design combines urban aesthetics with practical functionality.',
       details: 'Material: High-Quality Glass\nCapacity: 330ml\nFeatures: Ringed Texture, Ergonomic Grip, Modern Design\nDurability: Everyday Use, Impact Resistant\nUsage: Perfect for water, cocktails, and casual beverages\nMaintenance: Dishwasher safe\nManufactured by: Shivholic Kitchenware',
-      category: 'Glass'
+      category: 'Glass',
+      url: 'product/glass'
     },
     {
       name: 'Ring Glass',
@@ -198,7 +206,8 @@ export class ProductService {
       ],
       description: 'Elegant ring glass with decorative circular bands that enhance grip and visual appeal. The classic design with modern elements suits both casual and formal settings.',
       details: 'Material: Crystal-Clear Glass\nCapacity: 310ml\nFeatures: Decorative Rings, Comfortable Grip, Versatile Design\nDurability: Reinforced Construction, Daily Use\nUsage: Ideal for water, juice, and everyday beverages\nMaintenance: Dishwasher safe\nManufactured by: Shivholic Kitchenware',
-      category: 'Glass'
+      category: 'Glass',
+      url: 'product/glass'
     },
     {
       name: 'Stylish Glass',
@@ -209,7 +218,8 @@ export class ProductService {
       ],
       description: 'Fashion-forward stylish glass with contemporary design elements. The sleek silhouette and premium finish make it a statement piece for modern dining tables.',
       details: 'Material: Premium Glass\nCapacity: 290ml\nFeatures: Unique Shape, Balanced Weight, Designer Aesthetics\nDurability: High-Quality Construction, Resistant to Chipping\nUsage: Perfect for cocktails, spirits, and entertaining\nMaintenance: Hand wash recommended\nManufactured by: Shivholic Kitchenware',
-      category: 'Glass'
+      category: 'Glass',
+      url: 'product/glass'
     },
     {
       name: 'Glass With Straw',
@@ -219,7 +229,8 @@ export class ProductService {
       ],
       description: 'Premium glass with integrated straw design for convenient sipping. The innovative combination offers a stylish and eco-friendly alternative to disposable straws while enhancing your beverage experience.',
       details: 'Material: High-Quality Borosilicate Glass\nCapacity: 350ml\nFeatures: Built-in Glass Straw, Leak-Proof Design, Wide Mouth, Ergonomic Grip\nDurability: Heat-Resistant, Thermal Shock Proof, Dishwasher Safe\nUsage: Perfect for smoothies, juices, iced coffee, cocktails, and cold beverages\nMaintenance: Dishwasher safe, includes specialized cleaning brush\nManufactured by: Shivholic Kitchenware',
-      category: 'glass-with-straw'
+      category: 'Glass',
+      url: 'product/glass'
     },
     // Add more products here, with their respective categories
   ];
