@@ -104,8 +104,9 @@ export class ProductService {
         'assets/products/jug/jug-4.jpg'
       ],
       description: 'Elegant jug for serving water and beverages. Perfect for home and parties.',
-      details: 'Material: Stainless Steel\nCapacity: 1.5L\nFinish: Glossy\nDishwasher Safe: Yes',
-      category: 'Jug'
+      details: 'Material: Plastic\nCapacity: 1.5L\nFinish: Glossy\nDishwasher Safe: Yes',
+      category: 'Jug',
+      url: 'product/jug'
     },
     // Glass Category Products
     {

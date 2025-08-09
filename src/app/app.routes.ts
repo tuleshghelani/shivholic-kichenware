@@ -33,6 +33,11 @@ export const routes: Routes = [
     path: 'product/glass',
     loadComponent: () => import('./pages/category-wise-products/glass/glass.component').then(m => m.GlassComponent)
   },
+  {
+    path: 'product/jug',
+    loadComponent: () => import('./pages/category-wise-products/jug/jug.component').then(m => m.JugComponent)
+  },
+
 
   // ... other routes
 ];
