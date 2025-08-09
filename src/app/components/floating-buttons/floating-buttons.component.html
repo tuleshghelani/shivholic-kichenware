@@ -1,14 +1,20 @@
-<div class="floating-buttons">
-  <div class="floating-button custom-die" (click)="openCustomizeDiePopup()">
+<!-- Left side floating button -->
+<div class="floating-buttons-left">
+  <div class="floating-button custom-die" (click)="openCustomizeDiePopup()" aria-label="Open Custom Die Design Form">
     <div class="button-content">
       <i class="fas fa-tools"></i>
       <span>Custom Die Design</span>
     </div>
+    <div class="button-glow"></div>
   </div>
-  
-  <div class="floating-button whatsapp" (click)="openWhatsApp()">
+</div>
+
+<!-- Right side floating button -->
+<div class="floating-buttons-right">
+  <div class="floating-button whatsapp" (click)="openWhatsApp()" aria-label="Contact us on WhatsApp">
     <div class="button-content">
       <i class="fab fa-whatsapp"></i>
     </div>
+    <div class="button-glow"></div>
   </div>
 </div>

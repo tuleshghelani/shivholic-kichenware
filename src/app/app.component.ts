@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FloatingButtonsComponent } from './components/floating-buttons/floating-buttons.component';
@@ -10,7 +11,7 @@ import 'aos/dist/aos.css';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, FloatingButtonsComponent, CustomizeDiePopupComponent],
+  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent, FloatingButtonsComponent, CustomizeDiePopupComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
