@@ -1,0 +1,37 @@
+<section class="gallery-section">
+  <div class="container">
+    <div class="section-header">
+      <h1>Our Gallery</h1>
+      <p>Explore our premium kitchenware products through our gallery</p>
+    </div>
+    
+    <div class="gallery-grid">
+      <div class="gallery-item" *ngFor="let image of images; let i = index" (click)="openModal(i)">
+        <div class="image-container">
+          <img [src]="image.src" [alt]="image.alt" loading="lazy">
+          <div class="overlay">
+            <div class="overlay-content">
+              <span class="view-icon">+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Image Modal/Slider -->
+<div class="modal-overlay" *ngIf="showModal" (click)="onModalClick($event)">
+  <div class="modal-content">
+    <button class="close-btn" (click)="closeModal()">&times;</button>
+    
+    <div class="slider-container">
+      <img [src]="images[currentImageIndex].src" [alt]="images[currentImageIndex].alt" class="slider-image">
+      
+      <button class="nav-btn prev-btn" (click)="prevImage()">&lt;</button>
+      <button class="nav-btn next-btn" (click)="nextImage()">&gt;</button>
+      
+      <div class="image-counter">{{ currentImageIndex + 1 }} / {{ images.length }}</div>
+    </div>
+  </div>
+</div>

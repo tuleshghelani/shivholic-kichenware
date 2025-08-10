@@ -18,8 +18,16 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/group-of-companies/group-of-companies.component').then(m => m.GroupOfCompaniesComponent)
   },
   {
+    path: 'process',
+    loadComponent: () => import('./pages/process/process.component').then(m => m.ProcessComponent)
+  },
+  {
     path: 'products',
     loadComponent: () => import('./pages/products/products.component').then(m => m.ProductsComponent)
+  },
+  {
+    path: 'gallery',
+    loadComponent: () => import('./pages/gallery/gallery.component').then(m => m.GalleryComponent)
   },
   {
     path: 'product/chilli-cutter/regular-chilli-cutter',
