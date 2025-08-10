@@ -4,6 +4,23 @@
 @import 'styles/effects';
 @import 'styles/typography';
 @import './styles/fix-layout.scss';
+
+/* Disable text selection and copying across the entire website */
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Disable dragging of images */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
 // @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 $font-family-base: 'Roboto', sans-serif;
 // Primary Colors - Vibrant lime green theme representing freshness, innovation, and premium quality
