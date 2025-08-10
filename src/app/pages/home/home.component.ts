@@ -8,6 +8,7 @@ import { isPlatformServer } from '@angular/common';
 import { Inject } from '@angular/core';
 import { CustomizeDiePopupComponent } from '../../components/customize-die-popup/customize-die-popup.component';
 import { FloatingButtonsComponent } from '../../components/floating-buttons/floating-buttons.component';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-home',
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private meta: Meta,
     private title: Title,
+    private productService: ProductService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.setupSEO();
@@ -173,25 +175,33 @@ export class HomeComponent implements OnInit {
   }
 
   premiumProducts = [
+    // One product from Chilli Cutter category
     {
-      name: 'Product 1',
-      description: 'Experience the best in class with Product 1, crafted for durability and elegance.',
+      name: 'Premium Chilli Cutter',
+      description: 'Top-tier plastic chilli cutter with advanced design and superior cutting performance. The ultimate kitchen tool for chilli lovers.',
       isNew: true,
+      image: 'assets/products/Chilly-cutter/Premium-chilli-cutter/premium-chilli-cutter-1.jpg'
     },
+    // One product from Masala Box category
     {
-      name: 'Product 2',
-      description: 'Product 2 combines modern design with unmatched performance for your kitchen.',
+      name: 'Kitchen Ware Masala Box',
+      description: 'Premium quality masala box for your kitchen. Keeps your spices fresh and organized.',
       isNew: false,
+      image: 'assets/products/masala-box/masala-box-1.jpg'
     },
+    // One product from Jug category
     {
-      name: 'Product 3',
-      description: 'Elevate your cooking with Product 3, a perfect blend of style and functionality.',
+      name: 'Kitchenware Jug',
+      description: 'Elegant jug for serving water and beverages. Perfect for home and parties.',
       isNew: true,
+      image: 'assets/products/jug/jug-1.jpg'
     },
+    // One product from Glass category
     {
-      name: 'Product 4',
-      description: 'Discover the premium quality of Product 4, designed for professional results.',
+      name: 'Crystal Glass',
+      description: 'Luxurious crystal glass with exceptional clarity and brilliance. Elevate your dining experience with this premium glassware.',
       isNew: false,
+      image: 'assets/products/glass/crystal-glass/crystal-glass-1.jpg'
     },
   ];
 

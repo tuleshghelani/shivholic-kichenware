@@ -204,13 +204,13 @@
     <div class="premium-grid">
       <article class="premium-card" *ngFor="let product of premiumProducts; let i = index">
         <div class="premium-image-wrap">
-          <img src="assets/logo/about-kitchenware.jpg" [alt]="product.name" loading="lazy" />
+          <img [src]="product.image" [alt]="product.name" loading="lazy" />
           <div class="premium-badge" *ngIf="product.isNew">New</div>
         </div>
         <div class="premium-info">
           <h3 class="premium-name">{{ product.name }}</h3>
           <p class="premium-desc">{{ product.description }}</p>
-          <a class="premium-link" href="#" tabindex="0" [attr.aria-label]="'View details for ' + product.name">View Details</a>
+          <a class="premium-link" href="/products" tabindex="0" [attr.aria-label]="'View details for ' + product.name">View Details</a>
         </div>
       </article>
     </div>
