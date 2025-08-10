@@ -69,7 +69,7 @@ export class RegularChilliCutterComponent implements OnInit {
     // Set canonical URL
     this.meta.updateTag({ 
       property: 'og:url', 
-      content: 'https://shivholickitchenware.com/products/chilli-cutter/regular-chilli-cutter'
+      content: 'https://www.shivholicindia.com/products/chilli-cutter/regular-chilli-cutter'
     });
     
     // Set Open Graph tags for social sharing
@@ -108,7 +108,7 @@ export class RegularChilliCutterComponent implements OnInit {
       },
       offers: {
         '@type': 'Offer',
-        url: 'https://shivholickitchenware.com/products/chilli-cutter/regular-chilli-cutter',
+        url: 'https://www.shivholicindia.com/products/chilli-cutter/regular-chilli-cutter',
         priceCurrency: 'INR',
         availability: 'https://schema.org/InStock'
       }
