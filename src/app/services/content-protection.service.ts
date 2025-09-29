@@ -16,10 +16,10 @@ export class ContentProtectionService {
    */
   initialize(): void {
     // Only run browser-specific code when in browser environment
-    if (this.isBrowser) {
-      this.disableKeyboardShortcuts();
-      this.detectDevTools();
-    }
+    // if (this.isBrowser) {
+    //   this.disableKeyboardShortcuts();
+    //   this.detectDevTools();
+    // }
   }
 
   /**

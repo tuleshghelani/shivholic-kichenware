@@ -1,0 +1,113 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+@import '../../../styles/effects';
+@import '../../../styles.scss';
+
+.process {
+  background: $background-primary;
+  color: $text-primary;
+  padding: 2rem 1rem;
+  padding-top: 8rem !important;
+
+  .process__header {
+    // max-width: 1080px;
+    margin: 0 auto 2rem auto;
+    text-align: center;
+  }
+
+  .process__title {
+    color: $primary-dark;
+  }
+
+  .process__subtitle {
+    color: $neutral-dark;
+    font-size: 1rem;
+  }
+
+  .process__list {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1080px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .process__step {
+    background: $background-secondary;
+    border: 1px solid $border-light;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 6px 20px $shadow-color;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: 1rem;
+  }
+
+  .process__step-index {
+    background: $primary;
+    color: $text-white;
+    font-weight: $weight-bold;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px $shadow-color-dark;
+  }
+
+  .process__step-title {
+    margin: 0 0 .25rem 0;
+    font-size: 1.125rem;
+    color: $accent;
+  }
+
+  .process__step-text {
+    margin: 0 0 .5rem 0;
+    color: $text-secondary;
+    line-height: $line-height-relaxed;
+  }
+
+  @media (min-width: 768px) {
+    padding: 3rem 1.5rem;
+
+    .process__list {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .process__step {
+      padding: 1.25rem;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    padding: 4rem 2rem;
+
+    .process__list {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .process__step-title {
+      font-size: 1.25rem;
+    }
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
