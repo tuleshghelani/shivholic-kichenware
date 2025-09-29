@@ -1,1 +1,0 @@
-import{aa as o,gb as n,hb as s,pb as r,ub as i}from"./chunk-QKK5DA25.js";var m=(()=>{class e{static{this.\u0275fac=function(t){return new(t||e)}}static{this.\u0275cmp=o({type:e,selectors:[["app-process"]],standalone:!0,features:[i],decls:2,vars:0,template:function(t,p){t&1&&(n(0,"p"),r(1,"process works!"),s())}})}}return e})();export{m as ProcessComponent};
