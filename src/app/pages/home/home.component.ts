@@ -201,7 +201,7 @@ export class HomeComponent implements OnInit {
       name: 'Crystal Glass',
       description: 'Luxurious crystal glass with exceptional clarity and brilliance. Elevate your dining experience with this premium glassware.',
       isNew: false,
-      image: 'assets/products/glass/crystal-glass/crystal-glass-1.jpg'
+      image: 'assets/products/Glass/Crystal-glass/crystal-glass-1.jpg'
     },
   ];
 
