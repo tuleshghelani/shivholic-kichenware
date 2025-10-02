@@ -41,6 +41,10 @@ export const routes: Routes = [
     path: 'product/jug',
     loadComponent: () => import('./pages/category-wise-products/jug/jug.component').then(m => m.JugComponent)
   },
+  {
+    path: 'home-decor',
+    loadComponent: () => import('./pages/home-decor/home-decor.component').then(m => m.HomeDecorComponent)
+  },
 
 
   // ... other routes
