@@ -262,7 +262,7 @@ export class ProductService {
 
   // Get all products from both arrays
   private getAllProducts(): Product[] {
-    return [...this.products, ...this.homeDecorProducts];
+    return [...this.products];
   }
 
   getCategories(): string[] {

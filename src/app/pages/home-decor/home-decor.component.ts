@@ -35,7 +35,7 @@ export class HomeDecorComponent implements OnInit, OnDestroy {
     this.metaService.updateTag({ name: 'keywords', content: 'home decor, shivling, spiritual items, home temple, meditation decor, zinc metal, Shivholic Kitchenware' });
     
     // Get only Home Decor products
-    this.products = this.productService.getProducts('Home Decor');
+    this.products = this.productService.getHomeDecorProducts();
     this.isLoading = false;
 
     if (isPlatformBrowser(this.platformId)) {
