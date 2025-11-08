@@ -45,9 +45,15 @@
           Message is required.
         </div>
       </div>
-      <button type="submit" class="submit-btn" [disabled]="contactForm.invalid">Send Message</button>
+      <button type="submit" class="submit-btn" [disabled]="contactForm.invalid || isLoading">
+        <span *ngIf="!isLoading">Send Message</span>
+        <span *ngIf="isLoading">Sending...</span>
+      </button>
       <div class="form-success" *ngIf="formSubmitted">
         Thank you for contacting us! We'll respond soon.
+      </div>
+      <div class="form-error" *ngIf="errorMessage">
+        {{ errorMessage }}
       </div>
     </form>
   </div>

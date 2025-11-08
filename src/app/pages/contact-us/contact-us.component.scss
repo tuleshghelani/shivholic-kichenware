@@ -162,6 +162,12 @@
     margin-top: 1rem;
     text-align: center;
   }
+  .form-error {
+    color: $error;
+    font-weight: $weight-semibold;
+    margin-top: 1rem;
+    text-align: center;
+  }
 }
 
 /* Responsive Design */
